@@ -20,7 +20,7 @@
         <!-- Logo -->
         <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
           <img src="<?php echo futureco_icon('logo-triangulo.png'); ?>" alt="<?php bloginfo('name'); ?>">
-          <span class="logo-text">Future CO</span>
+          <span class="logo-text">Future co</span>
         </a>
 
         <!-- Desktop Navigation -->

@@ -6,6 +6,7 @@
 ?>
 <?php
 $faq_group = get_field('faq_section');
+$label_sessao = $faq_group['label_sessao'] ?? 'FAQ';
 $titulo = $faq_group['titulo'] ?? 'Perguntas <span class="text-gradient">Frequentes</span>';
 $descricao = $faq_group['descricao'] ?? 'Tire suas dúvidas sobre nossos serviços e metodologia de trabalho.';
 $faqs = $faq_group['perguntas'] ?? array();
@@ -20,7 +21,7 @@ $link_botao = $faq_group['link_botao'] ?? '#contato';
   <div class="container">
     <!-- Header moved to Top -->
     <div class="section-header scroll-animate">
-      <p class="section-label" style="color:rgba(255,255,255,0.5);">FAQ</p>
+      <p class="section-label" style="color:rgba(255,255,255,0.5);"><?php echo esc_html($label_sessao); ?></p>
       <h2 class="section-title" style="color:#fff;">
         <?php echo $titulo; ?>
       </h2>

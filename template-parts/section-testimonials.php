@@ -6,6 +6,7 @@
 ?>
 <?php
 $testemunhas_group = get_field('testemunhas_section');
+$label_sessao = $testemunhas_group['label_sessao'] ?? 'DEPOIMENTOS';
 $titulo = $testemunhas_group['titulo'] ?? 'O que nossos <span class="text-gradient">clientes dizem</span>';
 $testemunhas = $testemunhas_group['testemunhas'] ?? array();
 ?>
@@ -15,7 +16,7 @@ $testemunhas = $testemunhas_group['testemunhas'] ?? array();
   <div class="container" style="position:relative;z-index:1;">
     <!-- Section Header -->
     <div class="section-header">
-      <p class="section-label" style="color:rgba(255,255,255,0.5);">DEPOIMENTOS</p>
+      <p class="section-label" style="color:rgba(255,255,255,0.5);"><?php echo esc_html($label_sessao); ?></p>
       <h2 class="section-title" style="color:#fff;">
         <?php echo $titulo; ?>
       </h2>

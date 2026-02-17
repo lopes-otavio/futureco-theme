@@ -5,6 +5,7 @@
  */
 
 $blog_group = get_field('blog_sections');
+$label_sessao = $blog_group['label_sessao'] ?? 'NOSSO CONTEÚDO';
 $titulo = $blog_group['titulo'] ?? 'Últimas do <span class="text-gradient">Blog</span>';
 $descricao = $blog_group['descricao'] ?? 'Acesse nossos conteúdos exclusivos sobre marketing, performance e tecnologia.';
 
@@ -21,7 +22,7 @@ $blog_query = new WP_Query($args);
   <div class="container">
     <!-- Section Header -->
     <div class="section-header">
-      <p class="section-label" style="color:rgba(255,255,255,0.5);">NOSSO CONTEÚDO</p>
+      <p class="section-label" style="color:rgba(255,255,255,0.5);"><?php echo esc_html($label_sessao); ?></p>
       <h2 class="section-title" style="color:#fff;">
         <?php echo $titulo; ?>
       </h2>

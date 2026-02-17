@@ -21,4 +21,23 @@ document.addEventListener("DOMContentLoaded", function () {
 			teamSlider.scrollBy({ left: scrollAmount, behavior: "smooth" });
 		});
 	}
+
+	/* ============================================
+     PROCESS SLIDER
+     ============================================ */
+	const processSlider = document.getElementById("process-slider");
+	const processPrev = document.getElementById("process-prev");
+	const processNext = document.getElementById("process-next");
+
+	if (processSlider && processPrev && processNext) {
+		const scrollAmount = 350; // process card width roughly
+
+		processPrev.addEventListener("click", function () {
+			processSlider.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+		});
+
+		processNext.addEventListener("click", function () {
+			processSlider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+		});
+	}
 });

@@ -7,22 +7,31 @@
 	background: #fff;
 }
 .process-grid {
-	display: grid;
-	grid-template-columns: 1fr;
+	display: flex;
 	gap: 2rem;
+	overflow-x: auto;
+	padding: 1rem 0 3rem;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE/Edge */
 }
-@media (min-width: 1024px) {
-	.process-grid {
-		grid-template-columns: repeat(3, 1fr);
-	}
+.process-grid::-webkit-scrollbar {
+	display: none; /* Chrome/Safari */
 }
 .process-card {
+	flex: 0 0 300px;
+	scroll-snap-align: start;
 	position: relative;
 	background: #39496a;
 	border-radius: 1rem;
 	padding: 2rem;
-	height: 100%;
+	height: auto;
 	transition: all 0.5s ease;
+}
+@media (min-width: 1024px) {
+	.process-card {
+		flex: 0 0 calc(33.333% - 1.34rem);
+	}
 }
 .process-card:hover {
 	transform: translateY(-0.5rem);
@@ -90,4 +99,36 @@
 	border-radius: 50%;
 	margin-top: 0.5rem;
 	flex-shrink: 0;
+}
+
+/* Navigation Styles */
+.process-slider-container {
+	position: relative;
+}
+.process-nav {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 1rem;
+}
+.process-nav-btn {
+	width: 3.5rem;
+	height: 3.5rem;
+	border-radius: 50%;
+	border: 1px solid rgba(57, 73, 106, 0.2);
+	background: transparent;
+	color: #39496a;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.process-nav-btn:hover {
+	background: #39496a;
+	color: #fff;
+	transform: scale(1.1);
+}
+.process-nav-btn:active {
+	transform: scale(0.95);
 }

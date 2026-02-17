@@ -5,6 +5,7 @@
  */
 
 $cases_group = get_field('cases_section');
+$label_sessao = $cases_group['label_sessao'] ?? 'NOSSO PORTFÓLIO';
 $titulo = $cases_group['titulo'] ?? 'Cases de <span class="text-gradient">Sucesso</span>';
 $descricao = $cases_group['descricao'] ?? 'Não são apenas clientes. São histórias que valorizamos profundamente.';
 $cases = $cases_group['cases'] ?? array();
@@ -14,7 +15,7 @@ $cases = $cases_group['cases'] ?? array();
   <div class="container">
     <!-- Section Header -->
     <div class="section-header">
-      <p class="section-label" style="color:rgba(255,255,255,0.5);">NOSSO PORTFÓLIO</p>
+      <p class="section-label" style="color:rgba(255,255,255,0.5);"><?php echo esc_html($label_sessao); ?></p>
       <h2 class="section-title" style="color:#fff;">
         <?php echo $titulo; ?>
       </h2>

@@ -6,6 +6,7 @@
 ?>
 <?php
 $equipe_group = get_field('equipe_section');
+$label_sessao = $equipe_group['label_sessao'] ?? 'CONHEÇA NOSSO TIME';
 $titulo = $equipe_group['titulo'] ?? 'Nossa <span class="text-gradient">Equipe</span>';
 $equipe = $equipe_group['equipe'] ?? array();
 ?>
@@ -16,7 +17,7 @@ $equipe = $equipe_group['equipe'] ?? array();
     <!-- Header -->
     <div class="team-header">
       <div>
-        <p class="section-label" style="color:rgba(255,255,255,0.5);">CONHEÇA NOSSO TIME</p>
+        <p class="section-label" style="color:rgba(255,255,255,0.5);"><?php echo esc_html($label_sessao); ?></p>
         <h2 class="section-title" style="color:#fff;">
           <?php echo $titulo; ?>
         </h2>

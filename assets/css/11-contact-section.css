@@ -105,7 +105,7 @@
 .form-row {
 	display: grid;
 	grid-template-columns: 1fr;
-	align-items: center;
+	align-items: start;
 	gap: 1.5rem;
 	margin-bottom: 1.5rem;
 }
@@ -146,7 +146,62 @@
 }
 .form-submit {
 	margin-top: 1.5rem;
+	position: relative;
 }
 .form-submit .btn-primary {
 	width: 100%;
+}
+.form-group {
+	position: relative;
+}
+
+.error-message {
+	display: none;
+	color: #ff4d4d;
+	font-size: 0.75rem;
+	margin-top: 0.25rem;
+	min-height: 1rem; /* Reserve space */
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.form-group.has-error .error-message {
+	display: block;
+	visibility: visible;
+	opacity: 1;
+}
+
+.form-group.has-error input,
+.form-group.has-error textarea {
+	border-color: #ff4d4d;
+}
+
+.form-feedback {
+	display: none;
+	margin-top: 1rem;
+	font-size: 0.875rem;
+	min-height: 1.25rem; /* Reserve space */
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.3s ease;
+	text-align: center;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+}
+
+.form-feedback.is-success {
+	display: block;
+	visibility: visible;
+	opacity: 1;
+	background: rgba(46, 213, 115, 0.1);
+	color: #2ed573;
+}
+
+.form-feedback.is-error {
+	display: block;
+	visibility: visible;
+	opacity: 1;
+	background: rgba(255, 71, 87, 0.1);
+	color: #ff4757;
 }

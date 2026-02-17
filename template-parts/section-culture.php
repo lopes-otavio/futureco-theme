@@ -6,6 +6,7 @@
 ?>
 <?php
 $cultura_group = get_field('cultura_section');
+$label_sessao = $cultura_group['label_sessao'] ?? 'QUEM SOMOS';
 $titulo = $cultura_group['titulo'] ?? 'Nossa Cultura';
 $descricao = $cultura_group['descricao'] ?? 'Acreditamos que o sucesso nasce da combinação entre inovação, transparência e paixão pelo que fazemos. Nossa cultura é o alicerce de cada projeto que entregamos.';
 $cards = $cultura_group['cards'] ?? array();
@@ -22,8 +23,8 @@ $cards = $cultura_group['cards'] ?? array();
     <div class="culture-grid">
       <!-- Left Content -->
       <div class="culture-content scroll-animate">
-        <p class="section-label">QUEM SOMOS</p>
-        <h2 class="section-title"><?php echo esc_html($titulo); ?></h2>
+        <p class="section-label"><?php echo esc_html($label_sessao); ?></p>
+        <h2 class="section-title"><?php echo $titulo; ?></h2>
         <p class="section-description">
           <?php echo esc_html($descricao); ?>
         </p>

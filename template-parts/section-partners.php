@@ -23,11 +23,12 @@ $empresas = $partners_group['empresas'] ?? array();
           ?>
       <div class="partner-item">
         <?php if (!empty($empresa['logo'])) : ?>
-          <img src="<?php echo esc_url($empresa['logo']); ?>" alt="Parceiro" style="max-height: 40px; width: auto; filter: grayscale(1) brightness(200%);">
+        <img src="<?php echo esc_url($empresa['logo']); ?>" alt="Parceiro"
+          style="max-height: 40px; width: auto; filter: grayscale(1) brightness(200%);">
         <?php else : ?>
-          <div class="partner-placeholder">
-            <span>Logo</span>
-          </div>
+        <div class="partner-placeholder">
+          <span>Logo</span>
+        </div>
         <?php endif; ?>
       </div>
       <?php

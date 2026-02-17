@@ -6,6 +6,7 @@
 ?>
 <?php
 $servicos_group = get_field('servicos_section');
+$label_sessao = $servicos_group['label_sessao'] ?? 'O QUE COMPÕE O';
 $titulo = $servicos_group['titulo'] ?? '<span class="text-gradient">Marketing 360°</span>';
 $descricao = $servicos_group['descricao'] ?? 'Uma abordagem completa que integra todas as frentes do marketing digital para maximizar seus resultados.';
 $cards = $servicos_group['cards'] ?? array();
@@ -15,7 +16,7 @@ $cards = $servicos_group['cards'] ?? array();
   <div class="container" style="position:relative;z-index:1;">
     <!-- Section Header -->
     <div class="section-header">
-      <p class="section-label" style="color:rgba(255,255,255,0.5);">O QUE COMPÕE O</p>
+      <p class="section-label" style="color:rgba(255,255,255,0.5);"><?php echo esc_html($label_sessao); ?></p>
       <h2 class="section-title" style="color:#fff;">
         <?php echo $titulo; ?>
       </h2>

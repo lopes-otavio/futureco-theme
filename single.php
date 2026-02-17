@@ -9,7 +9,14 @@ get_header();
   <div class="container">
     <div class="privacy-content-wrapper glass-card">
       <header class="privacy-header">
-        <h1 class="privacy-title "><?php the_title(); ?></h1>
+        <?php $banner = get_field('imagem_destaque'); ?>
+        <?php if ($banner): ?>
+        <div class="post-banner" style="margin-bottom: 2rem; border-radius: 12px; overflow: hidden; height: 350px;">
+          <img src="<?php echo esc_url($banner); ?>" alt="<?php the_title_attribute(); ?>"
+            style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <?php endif; ?>
+        <h1 class="privacy-title single-post"><?php the_title(); ?></h1>
       </header>
 
       <div class="privacy-body">

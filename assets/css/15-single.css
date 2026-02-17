@@ -1,0 +1,108 @@
+/* ============================================
+   PRIVACY POLICY SINGLE (Refined Design)
+   ============================================ */
+
+.privacy-policy-single {
+	padding-top: 120px; /* Space for fixed header */
+	padding-bottom: 4rem;
+	background-color: var(--bg-primary, #39496a);
+}
+
+/* HERO IMAGE */
+.privacy-hero {
+	margin-bottom: 3rem;
+}
+
+.privacy-featured-image {
+	width: 100%;
+	height: auto;
+	border-radius: 0; /* Reference shows generic rect, but rounded is nicer? Keeping logical */
+	max-height: 500px;
+	object-fit: cover;
+	display: block;
+}
+
+/* CONTAINER */
+.privacy-content-wrapper {
+	padding: 1.5rem;
+	max-width: 100%; /* Use container width */
+	margin: 0 auto;
+}
+
+/* HEADER SECTION */
+.privacy-header {
+	margin-bottom: 3rem;
+	text-align: left; /* Align left as per reference */
+}
+
+.privacy-title {
+	font-size: 2rem;
+	line-height: 1.2;
+	font-weight: 800; /* Bold/Black */
+	text-transform: uppercase;
+	color: #ffffff;
+	margin-bottom: 0.5rem;
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+	.privacy-title-new {
+		font-size: 2.5rem;
+	}
+}
+
+.privacy-meta {
+	font-size: 0.875rem;
+	color: #9aa7b8; /* Muted gray/blue */
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: 1.5rem;
+	font-weight: 500;
+}
+
+.privacy-divider {
+	width: 60px;
+	height: 4px;
+	background-color: #ff3333; /* Bright red accent */
+	margin-top: 1rem;
+}
+
+/* BODY CONTENT */
+.privacy-body {
+	color: #edeff2;
+	font-size: 1rem;
+	line-height: 1.7;
+	margin-top: 2rem;
+}
+
+.privacy-body p {
+	margin-bottom: 1.5rem;
+}
+
+.privacy-body h2,
+.privacy-body h3,
+.privacy-body h4 {
+	color: #ffffff;
+	font-weight: 700;
+	margin-top: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+.privacy-body h2 {
+	font-size: 1.5rem;
+}
+
+.privacy-body h3 {
+	font-size: 1.25rem;
+}
+
+.privacy-body ul {
+	list-style: disc;
+	margin-left: 1.5rem;
+	margin-bottom: 1.5rem;
+	color: #edeff2;
+}
+
+.privacy-body li {
+	margin-bottom: 0.5rem;
+}

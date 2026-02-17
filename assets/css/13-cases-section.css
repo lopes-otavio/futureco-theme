@@ -1,0 +1,131 @@
+/* ============================================
+   CASES SECTION
+   ============================================ */
+.cases-section {
+	position: relative;
+	overflow: hidden;
+}
+
+.cases-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+}
+
+@media (min-width: 640px) {
+	.cases-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 1024px) {
+	.cases-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (min-width: 1280px) {
+	.cases-grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.case-card {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	height: 100%;
+	transition:
+		transform 0.3s ease,
+		border-color 0.3s ease;
+}
+
+.case-card:hover {
+	transform: translateY(-5px);
+	border-color: rgba(255, 255, 255, 0.2);
+}
+
+.case-image {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+	border-radius: 0.75rem 0.75rem 0 0;
+}
+
+.case-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+}
+
+.case-card:hover .case-image img {
+	transform: scale(1.1);
+}
+
+.case-overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(57, 73, 106, 0.6);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.case-card:hover .case-overlay {
+	opacity: 1;
+}
+
+.view-case {
+	width: 100%;
+	height: 100%;
+}
+
+.case-content {
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.case-content h3 {
+	font-size: 1.125rem;
+	font-weight: 700;
+	margin-bottom: 0.75rem;
+	color: #fff;
+}
+
+.case-content p {
+	font-size: 0.875rem;
+	color: rgba(255, 255, 255, 0.7);
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+	flex: 1;
+}
+
+.case-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 0.875rem;
+	font-weight: 600;
+	color: #fff;
+	transition: color 0.3s ease;
+}
+
+.case-link:hover {
+	color: #9aa7b8;
+}
+
+.image-placeholder {
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 0.05) 0%,
+		rgba(255, 255, 255, 0.1) 100%
+	);
+}

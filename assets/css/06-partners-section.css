@@ -1,0 +1,77 @@
+/* ============================================
+   PARTNERS SECTION
+   ============================================ */
+.partners-section {
+	padding: 4rem 0;
+	position: relative;
+	overflow: hidden;
+	background: #39496a;
+}
+.partners-label {
+	text-align: center;
+	color: rgba(255, 255, 255, 0.4);
+	font-size: 0.875rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	margin-bottom: 3rem;
+}
+.partners-carousel {
+	position: relative;
+	overflow: hidden;
+}
+.partners-carousel .fade-left {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 5rem;
+	background: linear-gradient(to right, #39496a, transparent);
+	z-index: 10;
+}
+.partners-carousel .fade-right {
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 5rem;
+	background: linear-gradient(to left, #39496a, transparent);
+	z-index: 10;
+}
+.partners-track {
+	display: flex;
+	animation: scroll 30s linear infinite;
+}
+.partners-track:hover {
+	animation-play-state: paused;
+}
+.partner-item {
+	flex-shrink: 0;
+	margin: 0 2rem;
+}
+@media (min-width: 1024px) {
+	.partner-item {
+		margin: 0 3rem;
+	}
+}
+.partner-placeholder {
+	height: 2.5rem;
+	padding: 0 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 0.5rem;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.partner-placeholder span {
+	color: rgba(255, 255, 255, 0.4);
+	font-weight: 700;
+	font-size: 1.125rem;
+	letter-spacing: 0.05em;
+	white-space: nowrap;
+	transition: color 0.3s ease;
+}
+.partner-placeholder:hover span {
+	color: rgba(255, 255, 255, 0.8);
+}

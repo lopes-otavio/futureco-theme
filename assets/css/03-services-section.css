@@ -1,0 +1,104 @@
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
+.services-section {
+	position: relative;
+	overflow: hidden;
+	background: #39496a;
+}
+.services-section .decorative-gradient {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to left, rgba(154, 167, 184, 0.1), transparent);
+}
+.services-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+}
+@media (min-width: 768px) {
+	.services-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (min-width: 1024px) {
+	.services-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+.service-card {
+	padding: 2rem;
+	height: 100%;
+	transition: all 0.5s ease;
+}
+.service-card:hover {
+	transform: translateY(-0.5rem);
+	background: rgba(255, 255, 255, 0.1);
+	box-shadow: 0 20px 40px rgba(255, 255, 255, 0.05);
+}
+.service-icon {
+	width: 3.5rem;
+	height: 3.5rem;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 0.75rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1.5rem;
+	transition: all 0.3s ease;
+}
+.service-card:hover .service-icon {
+	background: rgba(255, 255, 255, 0.2);
+	transform: scale(1.1);
+}
+.service-icon img {
+	width: 1.75rem;
+	height: 1.75rem;
+}
+.service-card h3 {
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 0.75rem;
+	transition: all 0.3s ease;
+}
+.service-card:hover h3 {
+	background: linear-gradient(to right, #fff, #9aa7b8);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+.service-card p {
+	color: rgba(255, 255, 255, 0.6);
+	line-height: 1.75;
+	transition: color 0.3s ease;
+}
+.service-card:hover p {
+	color: rgba(255, 255, 255, 0.8);
+}
+.service-link {
+	margin-top: 1.5rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: #9aa7b8;
+	font-size: 0.875rem;
+	font-weight: 500;
+	transition: color 0.3s ease;
+}
+.service-card:hover .service-link {
+	color: #fff;
+}
+.service-link img {
+	width: 1rem;
+	height: 1rem;
+	opacity: 0.6;
+	transition: all 0.3s ease;
+}
+.service-card:hover .service-link img {
+	transform: translate(4px, -4px);
+	opacity: 1;
+}

@@ -1,0 +1,21 @@
+<svg width="240" height="247" viewBox="0 0 240 247" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_2019_654" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="3" width="240" height="241">
+<path d="M239.84 3.5H0V243.34H239.84V3.5Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_2019_654)">
+<mask id="mask1_2019_654" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="3" width="240" height="241">
+<path d="M0 3.5H239.84V243.34H0V3.5Z" fill="white"/>
+</mask>
+<g mask="url(#mask1_2019_654)">
+<path d="M146.763 123.419C146.763 138.244 134.745 150.262 119.92 150.262C105.095 150.262 93.0771 138.244 93.0771 123.419C93.0771 108.594 105.095 96.5762 119.92 96.5762C134.745 96.5762 146.763 108.594 146.763 123.419Z" stroke="white" stroke-width="3.41633" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M61.6221 172.779L99.6156 140.963" stroke="white" stroke-width="3.41632" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M61.6225 172.78C65.8099 176.98 65.7996 183.777 61.5995 187.965C57.3994 192.152 50.6021 192.142 46.4148 187.942C42.2274 183.742 42.2378 176.944 46.4379 172.757C50.638 168.57 57.4352 168.58 61.6225 172.78Z" stroke="white" stroke-width="3.41632" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M119.355 65.5756L119.649 96.5763" stroke="white" stroke-width="3.41633" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M131.697 41.0807C136.446 47.9675 134.714 57.3997 127.827 62.1483C120.94 66.8968 111.508 65.1622 106.76 58.2753C102.011 51.3884 103.744 41.9579 110.631 37.2093C117.518 32.4608 126.949 34.1938 131.697 41.0807Z" stroke="white" stroke-width="3.41633" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M178.128 129.238L146.649 125.861" stroke="white" stroke-width="3.41632" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M211.669 117.601C219.028 124.982 219.009 136.931 211.628 144.29C204.247 151.649 192.298 151.631 184.939 144.25C177.58 136.868 177.598 124.919 184.98 117.56C192.361 110.202 204.31 110.22 211.669 117.601Z" stroke="white" stroke-width="3.41632" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M130.133 176.209L125.019 149.774" stroke="white" stroke-width="3.41633" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M143.486 181.669C147.617 187.661 146.109 195.867 140.117 199.998C134.126 204.13 125.92 202.621 121.788 196.63C117.657 190.638 119.165 182.432 125.157 178.301C131.148 174.17 139.354 175.678 143.486 181.669Z" stroke="white" stroke-width="3.41633" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>

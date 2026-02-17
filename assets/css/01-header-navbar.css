@@ -1,0 +1,261 @@
+/* ============================================
+   HEADER / NAVBAR (PRIMARY + SECONDARY)
+   ============================================ */
+
+.site-header {
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	transition:
+		transform 0.35s ease,
+		opacity 0.25s ease,
+		background-color 0.3s ease,
+		box-shadow 0.3s ease;
+	will-change: transform, opacity;
+}
+
+/* HEADER PRIMÁRIO: sempre no topo, z-index menor */
+.site-header--primary {
+	position: fixed;
+	z-index: 10;
+	transform: translateY(0);
+	opacity: 1;
+}
+
+/* Quando o secundário entra, o primário some visualmente */
+.site-header--primary.is-hidden {
+	transform: translateY(-100%);
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* HEADER SECUNDÁRIO: fica por cima e desce */
+.site-header--secondary {
+	position: fixed;
+	z-index: 50;
+
+	/* começa fora da tela */
+	transform: translateY(-110%);
+	opacity: 0;
+	pointer-events: none;
+
+	/* visual sticky (mantém identidade) */
+	background: rgba(57, 73, 106, 0.95);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+	border-bottom: 1px solid var(--border-color);
+}
+
+/* visível: desce por cima do primário */
+.site-header--secondary.is-visible {
+	transform: translateY(0);
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* Shrink no secundário (efeito “compacto”) */
+.site-header--secondary .header-inner {
+	height: 4rem;
+}
+.site-header--secondary .logo img {
+	height: 2rem;
+}
+
+/* ============================================
+   HEADER INNER
+   ============================================ */
+
+.site-header .header-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 5rem;
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+
+.site-header .logo {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.site-header .logo img {
+	height: 2.5rem;
+	width: auto;
+	transition:
+		transform 0.3s ease,
+		height 0.3s ease;
+}
+
+.site-header .logo:hover img {
+	transform: scale(1.05);
+}
+
+.site-header .logo-text {
+	color: #fff;
+	font-weight: 700;
+	font-size: 1.25rem;
+	letter-spacing: -0.025em;
+	display: none;
+}
+
+@media (min-width: 640px) {
+	.site-header .logo-text {
+		display: block;
+	}
+}
+
+/* ============================================
+   DESKTOP NAV
+   ============================================ */
+
+.desktop-nav {
+	display: none;
+	align-items: center;
+	gap: 2rem;
+	list-style: none;
+}
+
+.desktop-nav li {
+	list-style: none;
+}
+
+@media (min-width: 768px) {
+	.desktop-nav {
+		display: flex;
+	}
+}
+
+.desktop-nav a {
+	color: rgba(255, 255, 255, 0.8);
+	font-weight: 500;
+	font-size: 0.875rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	transition: color 0.3s ease;
+	position: relative;
+	text-decoration: none;
+}
+
+.desktop-nav a::after {
+	content: "";
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: #fff;
+	transition: width 0.3s ease;
+}
+
+.desktop-nav a:hover {
+	color: #fff;
+}
+.desktop-nav a:hover::after {
+	width: 100%;
+}
+
+/* ============================================
+   HEADER CTA
+   ============================================ */
+
+.header-cta {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.header-cta {
+		display: block;
+	}
+}
+
+/* ============================================
+   MOBILE BUTTON
+   ============================================ */
+
+.mobile-menu-btn {
+	display: block;
+	color: #fff;
+	padding: 0.5rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+@media (min-width: 768px) {
+	.mobile-menu-btn {
+		display: none;
+	}
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+
+.mobile-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background: rgba(57, 73, 106, 0.95);
+	backdrop-filter: blur(12px);
+
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.3s ease;
+
+	padding: 0 1rem;
+}
+
+.mobile-menu.open {
+	max-height: 24rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu nav {
+	padding: 1.5rem 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	list-style: none;
+}
+
+.mobile-menu li {
+	list-style: none;
+}
+
+.mobile-menu a {
+	color: rgba(255, 255, 255, 0.8);
+	font-weight: 500;
+	font-size: 1.125rem;
+	padding: 0.75rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+	transition: all 0.3s ease;
+	text-decoration: none;
+}
+
+.mobile-menu a:last-of-type {
+	border-bottom: none;
+}
+
+.mobile-menu a.btn-primary {
+	margin-top: 1rem;
+	width: 100%;
+	justify-content: center;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+}
+
+.mobile-menu a:hover {
+	color: #fff;
+}
+
+.mobile-nav-link.btn-primary {
+	color: #39496a;
+	padding: 0.5rem 0;
+}

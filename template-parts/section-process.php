@@ -10,6 +10,8 @@ $label_sessao = $processo_group['label_sessao'] ?? 'COMO TRABALHAMOS';
 $titulo = $processo_group['titulo'] ?? 'Nossa Metodologia';
 $descricao = $processo_group['descricao'] ?? 'Um processo estruturado em três pilares que garante resultados consistentes e mensuráveis.';
 $cards = $processo_group['cards'] ?? array();
+
+if (get_field('ativar') !== false) :
 ?>
 <section class="process-section section-padding" id="processo">
   <div class="container">
@@ -65,3 +67,4 @@ $cards = $processo_group['cards'] ?? array();
     </div>
   </div>
 </section>
+<?php endif; ?>

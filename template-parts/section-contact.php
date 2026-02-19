@@ -16,6 +16,8 @@ $contacts = new WP_Query(array(
 $contato_group = get_field('contato_section');
 $label_sessao = $contato_group['label_sessao'] ?? 'ENTRE EM CONTATO';
 $titulo = $contato_group['titulo'] ?? 'Vamos conversar sobre seu <span style="color:#9AA7B8;">projeto?</span>';
+
+if (get_field('ativar') !== false) :
 ?>
 <section class="contact-section section-padding" id="contato">
   <div class="container">

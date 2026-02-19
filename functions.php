@@ -214,3 +214,16 @@ function futureco_display_social_links($link_class = '') {
         wp_reset_postdata();
        }
     }
+
+/**
+ * Helper: Get dynamic menu name based on language
+ */
+function futureco_get_menu_name($base_name) {
+    if (function_exists('pll_current_language')) {
+        $lang = pll_current_language();
+        if ($lang && $lang !== 'pt') {
+            return $base_name . '-' . $lang;
+        }
+    }
+    return $base_name;
+}

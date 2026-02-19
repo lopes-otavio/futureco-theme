@@ -9,6 +9,8 @@ $equipe_group = get_field('equipe_section');
 $label_sessao = $equipe_group['label_sessao'] ?? 'CONHEÇA NOSSO TIME';
 $titulo = $equipe_group['titulo'] ?? 'Nossa <span class="text-gradient">Equipe</span>';
 $equipe = $equipe_group['equipe'] ?? array();
+
+if (get_field('ativar') !== false) :
 ?>
 <section class="team-section section-padding" id="equipe">
   <div class="decorative-bg"></div>
@@ -106,3 +108,4 @@ $equipe = $equipe_group['equipe'] ?? array();
     </div>
   </div>
 </section>
+<?php endif; ?>

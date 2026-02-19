@@ -10,6 +10,8 @@ $label_sessao = $servicos_group['label_sessao'] ?? 'O QUE COMPÕE O';
 $titulo = $servicos_group['titulo'] ?? '<span class="text-gradient">Marketing 360°</span>';
 $descricao = $servicos_group['descricao'] ?? 'Uma abordagem completa que integra todas as frentes do marketing digital para maximizar seus resultados.';
 $cards = $servicos_group['cards'] ?? array();
+
+if (get_field('ativar') !== false) :
 ?>
 <section class="services-section section-padding" id="servicos">
   <div class="decorative-gradient"></div>
@@ -45,3 +47,4 @@ $cards = $servicos_group['cards'] ?? array();
     </div>
   </div>
 </section>
+<?php endif; ?>

@@ -8,6 +8,8 @@
 $partners_group = get_field('empresas_section');
 $titulo = $partners_group['titulo'] ?? 'Empresas que confiam em nós';
 $empresas = $partners_group['empresas'] ?? array();
+
+if (get_field('ativar') !== false) :
 ?>
 <section class="partners-section" id="parceiros">
   <p class="partners-label"><?php echo esc_html($titulo); ?></p>
@@ -39,3 +41,4 @@ $empresas = $partners_group['empresas'] ?? array();
     </div>
   </div>
 </section>
+<?php endif; ?>

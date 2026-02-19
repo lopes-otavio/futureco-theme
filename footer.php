@@ -34,7 +34,7 @@
         <h3>Serviços</h3>
         <?php
         wp_nav_menu(array(
-            'menu'           => 'Serviços',
+            'menu'           => futureco_get_menu_name('Serviços'),
             'container'      => false,
             'items_wrap'     => '<ul>%3$s</ul>',
             'fallback_cb'    => false,
@@ -48,7 +48,7 @@
         <h3>Empresa</h3>
         <?php
         wp_nav_menu(array(
-            'menu'           => 'Empresa',
+            'menu'           => futureco_get_menu_name('Empresa'),
             'container'      => false,
             'items_wrap'     => '<ul>%3$s</ul>',
             'fallback_cb'    => false,
@@ -62,7 +62,7 @@
         <h3>Suporte</h3>
         <?php
         wp_nav_menu(array(
-            'menu'           => 'Suporte',
+            'menu'           => futureco_get_menu_name('Suporte'),
             'container'      => false,
             'items_wrap'     => '<ul>%3$s</ul>',
             'fallback_cb'    => false,

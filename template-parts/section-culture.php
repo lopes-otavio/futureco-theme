@@ -10,6 +10,8 @@ $label_sessao = $cultura_group['label_sessao'] ?? 'QUEM SOMOS';
 $titulo = $cultura_group['titulo'] ?? 'Nossa Cultura';
 $descricao = $cultura_group['descricao'] ?? 'Acreditamos que o sucesso nasce da combinação entre inovação, transparência e paixão pelo que fazemos. Nossa cultura é o alicerce de cada projeto que entregamos.';
 $cards = $cultura_group['cards'] ?? array();
+
+if (get_field('ativar') !== false) :
 ?>
 <section class="culture-section section-padding" id="sobre">
   <div class="decorative-bg"></div>
@@ -54,3 +56,4 @@ $cards = $cultura_group['cards'] ?? array();
     </div>
   </div>
 </section>
+<?php endif; ?>

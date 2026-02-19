@@ -9,6 +9,8 @@ $testemunhas_group = get_field('testemunhas_section');
 $label_sessao = $testemunhas_group['label_sessao'] ?? 'DEPOIMENTOS';
 $titulo = $testemunhas_group['titulo'] ?? 'O que nossos <span class="text-gradient">clientes dizem</span>';
 $testemunhas = $testemunhas_group['testemunhas'] ?? array();
+
+if (get_field('ativar') !== false) :
 ?>
 <section class="testimonials-section section-padding" id="depoimentos">
   <div class="decorative-1"></div>
@@ -97,3 +99,4 @@ $testemunhas = $testemunhas_group['testemunhas'] ?? array();
     </div>
   </div>
 </section>
+<?php endif; ?>

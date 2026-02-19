@@ -16,8 +16,9 @@ $args = array(
 );
 
 $blog_query = new WP_Query($args);
-?>
 
+if (get_field('ativar') !== false) :
+?>
 <section class="blog-section section-padding" id="blog">
   <div class="container">
     <!-- Section Header -->
@@ -40,11 +41,11 @@ $blog_query = new WP_Query($args);
       <article class="post-card glass-card scroll-animate <?php echo $delay ? 'delay-' . $delay : ''; ?>">
         <div class="post-image">
           <?php if ($imagem_destaque) : ?>
-            <img src="<?php echo esc_url($imagem_destaque); ?>" alt="<?php the_title_attribute(); ?>">
+          <img src="<?php echo esc_url($imagem_destaque); ?>" alt="<?php the_title_attribute(); ?>">
           <?php elseif (has_post_thumbnail()) : ?>
-            <?php the_post_thumbnail('medium_large'); ?>
+          <?php the_post_thumbnail('medium_large'); ?>
           <?php else : ?>
-            <div class="image-placeholder"></div>
+          <div class="image-placeholder"></div>
           <?php endif; ?>
           <div class="post-date">
             <span><?php echo get_the_date('d'); ?></span>
@@ -60,7 +61,8 @@ $blog_query = new WP_Query($args);
           </div>
           <a href="<?php the_permalink(); ?>" class="post-link">
             Ler Mais
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
@@ -71,3 +73,4 @@ $blog_query = new WP_Query($args);
     </div>
   </div>
 </section>
+<?php endif; ?>

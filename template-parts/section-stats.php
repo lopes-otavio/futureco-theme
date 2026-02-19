@@ -7,6 +7,8 @@
 <?php
 $stats_group = get_field('numeros_section');
 $numeros = $stats_group['numeros'] ?? array();
+
+if (get_field('ativar') !== false) :
 ?>
 <section class="stats-section" id="numeros"
   style="background-image:url('<?php echo futureco_image('futureco-results.png'); ?>');background-size:cover;background-position:center;">
@@ -28,3 +30,4 @@ $numeros = $stats_group['numeros'] ?? array();
     </div>
   </div>
 </section>
+<?php endif; ?>

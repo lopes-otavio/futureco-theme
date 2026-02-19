@@ -27,7 +27,7 @@
         <nav class="desktop-nav" aria-label="Menu principal">
           <?php
             wp_nav_menu(array(
-              'menu'           => 'Header',
+              'menu'           => futureco_get_menu_name('Header'),
               'container'      => false,
               'items_wrap'     => '%3$s',
               'fallback_cb'    => false,
@@ -35,6 +35,30 @@
             ));
             ?>
         </nav>
+
+        <!-- Language Switcher Desktop -->
+        <?php if (function_exists('pll_the_languages')) : ?>
+          <div class="language-switcher desktop-only">
+            <?php
+            $languages = pll_the_languages(array('raw' => 1));
+            foreach ($languages as $lang) :
+              $flag = '';
+              $slug = $lang['slug'];
+              if ($slug === 'pt' || $slug === 'pt-br' || $slug === 'br') $flag = 'br.svg';
+              elseif ($slug === 'en' || $slug === 'us') $flag = 'us.svg';
+              elseif ($slug === 'es') $flag = 'es.svg';
+
+              if ($flag) :
+            ?>
+                <a href="<?php echo esc_url($lang['url']); ?>" class="lang-item <?php echo $lang['current_lang'] ? 'is-active' : ''; ?>">
+                  <img src="<?php echo futureco_asset('svg/bandeiras/' . $flag); ?>" alt="<?php echo esc_attr($lang['name']); ?>">
+                </a>
+            <?php
+              endif;
+            endforeach;
+            ?>
+          </div>
+        <?php endif; ?>
 
         <!-- CTA Button -->
         <div class="header-cta">
@@ -66,7 +90,7 @@
       <nav class="container" aria-label="Menu mobile">
         <?php
           wp_nav_menu(array(
-            'menu'           => 'Header',
+            'menu'           => futureco_get_menu_name('Header'),
             'container'      => false,
             'items_wrap'     => '%3$s',
             'fallback_cb'    => false,
@@ -76,6 +100,30 @@
         <a href="#contato" class="btn-primary mobile-nav-link" style="text-align:center;margin-top:1rem;">
           Fale Conosco
         </a>
+
+        <!-- Language Switcher Mobile -->
+        <?php if (function_exists('pll_the_languages')) : ?>
+          <div class="language-switcher mobile-only">
+            <?php
+            $languages = pll_the_languages(array('raw' => 1));
+            foreach ($languages as $lang) :
+              $flag = '';
+              $slug = $lang['slug'];
+              if ($slug === 'pt' || $slug === 'pt-br' || $slug === 'br') $flag = 'br.svg';
+              elseif ($slug === 'en' || $slug === 'us') $flag = 'us.svg';
+              elseif ($slug === 'es') $flag = 'es.svg';
+
+              if ($flag) :
+            ?>
+                <a href="<?php echo esc_url($lang['url']); ?>" class="lang-item <?php echo $lang['current_lang'] ? 'is-active' : ''; ?>">
+                  <img src="<?php echo futureco_asset('svg/bandeiras/' . $flag); ?>" alt="<?php echo esc_attr($lang['name']); ?>">
+                </a>
+            <?php
+              endif;
+            endforeach;
+            ?>
+          </div>
+        <?php endif; ?>
       </nav>
     </div>
   </header>

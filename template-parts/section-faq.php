@@ -15,8 +15,9 @@ $faqs = $faq_group['perguntas'] ?? array();
 $imagem = $faq_group['imagem'] ?? '';
 $texto_funcionario = $faq_group['texto_funcionario'] ?? '';
 $link_botao = $faq_group['link_botao'] ?? '#contato';
-?>
 
+if (get_field('ativar') !== false) :
+?>
 <section class="faq-section section-padding" id="faq">
   <div class="container">
     <!-- Header moved to Top -->
@@ -78,3 +79,4 @@ $link_botao = $faq_group['link_botao'] ?? '#contato';
     </div>
   </div>
 </section>
+<?php endif; ?>

@@ -259,3 +259,65 @@
 	color: #39496a;
 	padding: 0.5rem 0;
 }
+
+/* ============================================
+   LANGUAGE SWITCHER
+   ============================================ */
+
+.language-switcher {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.language-switcher.desktop-only {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.language-switcher.desktop-only {
+		display: flex;
+		margin-right: 1rem;
+	}
+}
+
+.language-switcher.mobile-only {
+	display: flex;
+	justify-content: center;
+	margin-top: 1.5rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lang-item {
+	display: flex;
+	align-items: center;
+	transition: opacity 0.3s ease;
+}
+
+.lang-item:hover {
+	opacity: 0.7;
+}
+
+.lang-item img {
+	width: 22px;
+	height: auto;
+	display: block;
+}
+
+/* Vertical separator */
+.language-switcher .lang-item + .lang-item {
+	position: relative;
+	padding-left: 0.75rem;
+}
+
+.language-switcher .lang-item + .lang-item::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1px;
+	height: 16px;
+	background: rgba(255, 255, 255, 0.4);
+}

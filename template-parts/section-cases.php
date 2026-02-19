@@ -9,8 +9,9 @@ $label_sessao = $cases_group['label_sessao'] ?? 'NOSSO PORTFÓLIO';
 $titulo = $cases_group['titulo'] ?? 'Cases de <span class="text-gradient">Sucesso</span>';
 $descricao = $cases_group['descricao'] ?? 'Não são apenas clientes. São histórias que valorizamos profundamente.';
 $cases = $cases_group['cases'] ?? array();
-?>
 
+if (get_field('ativar') !== false) :
+?>
 <section class="cases-section section-padding" id="cases">
   <div class="container">
     <!-- Section Header -->
@@ -59,3 +60,4 @@ $cases = $cases_group['cases'] ?? array();
     </div>
   </div>
 </section>
+<?php endif; ?>

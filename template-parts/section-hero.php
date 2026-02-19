@@ -9,6 +9,8 @@ $hero = get_field('hero_section');
 $titulo = $hero['titulo'] ?? 'Transforme sua presença digital em resultados reais';
 $descricao = $hero['descricao'] ?? 'Somos uma agência de marketing digital 360° especializada em criar estratégias que conectam marcas ao seu público e geram crescimento sustentável.';
 $background = $hero['background'] ?? futureco_image('futureco-hero-bg.png');
+
+if (get_field('ativar') !== false) :
 ?>
 <section class="hero-section" id="hero">
   <!-- Background -->
@@ -85,3 +87,4 @@ $background = $hero['background'] ?? futureco_image('futureco-hero-bg.png');
     </div>
   </div>
 </section>
+<?php endif; ?>

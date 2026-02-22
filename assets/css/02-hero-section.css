@@ -192,6 +192,5 @@
 	position: relative;
 	z-index: 10;
 	background-color: #39496a; /* Hardcoded solid background */
-	padding-bottom: 4rem;
 	box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }

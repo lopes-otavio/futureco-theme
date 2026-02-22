@@ -1,0 +1,314 @@
+/* ============================================
+   DARK MODE OVERRIDES
+   ============================================
+   Ativado via data-theme="dark" no <body>.
+   Sobrescreve backgrounds azuis (#39496A) por
+   gradiente escuro com sombra interna.
+   ============================================ */
+
+/* ---------- VARIÁVEIS DARK ---------- */
+body[data-theme="dark"] {
+	--dark-gradient: linear-gradient(
+		120deg,
+		#7e8a9f 0%,
+		#657289 6%,
+		#39496a 20%,
+		#272b2e 50%,
+		#39496a 80%,
+		#657289 94%,
+		#7e8a9f 100%
+	);
+	--dark-shadow:
+		inset 0 1px 2px rgba(255, 255, 255, 0.25),
+		inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- BODY BASE ---------- */
+body[data-theme="dark"] {
+	background: var(--dark-gradient);
+	box-shadow: var(--dark-shadow);
+}
+
+/* ---------- SECTION BACKGROUNDS ---------- */
+body[data-theme="dark"] .services-section,
+body[data-theme="dark"] .process-section,
+body[data-theme="dark"] .partners-section,
+body[data-theme="dark"] .testimonials-section,
+/* body[data-theme="dark"] .team-section, */
+body[data-theme="dark"] .culture-section,
+body[data-theme="dark"] .faq-section,
+/* body[data-theme="dark"] .contact-section, */
+body[data-theme="dark"] .cases-section,
+body[data-theme="dark"] .blog-section,
+body[data-theme="dark"] .hero-section,
+body[data-theme="dark"] .site-header--primary,
+body[data-theme="dark"] .site-header--secondary,
+body[data-theme="dark"] .mobile-menu {
+	background: var(--dark-gradient) !important;
+	box-shadow: var(--dark-shadow) !important;
+}
+
+/* ---------- TEAM SECTION & BLOG SECTION OVERRIDES (White Background) ---------- */
+body[data-theme="dark"] .team-section {
+	background: #fff !important;
+	box-shadow: none !important;
+}
+
+body[data-theme="dark"] .team-section .section-title,
+body[data-theme="dark"] .team-section .section-label {
+	color: #39496a !important;
+}
+
+body[data-theme="dark"] .team-nav-btn {
+	background: rgb(57, 73, 106) !important;
+	color: #ffffff !important;
+}
+
+body[data-theme="dark"] .team-nav-btn:hover {
+	background: rgba(57, 73, 106, 0.699) !important;
+}
+
+body[data-theme="dark"] .post-card-title,
+body[data-theme="dark"] .contact-section .section-title,
+body[data-theme="dark"] .post-card-title a {
+	color: #fff !important;
+}
+
+/* ---------- SEARCH PAGE (INDEX.PHP) REFINEMENTS ---------- */
+body[data-theme="dark"] .search-page-container {
+	background: var(--dark-gradient) !important;
+	box-shadow: var(--dark-shadow) !important;
+}
+
+body[data-theme="dark"] .search-page-title {
+	color: #fff !important;
+}
+
+body[data-theme="dark"] .search-page-input {
+	background: rgba(255, 255, 255, 0.1) !important;
+	border-color: rgba(255, 255, 255, 0.2) !important;
+	color: #fff !important;
+}
+
+body[data-theme="dark"] .search-page-input::placeholder {
+	color: rgba(255, 255, 255, 0.5) !important;
+}
+
+body[data-theme="dark"] .search-page-btn {
+	color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body[data-theme="dark"] .search-page-btn:hover {
+	color: #fff !important;
+}
+
+body[data-theme="dark"] .post-card {
+	background: rgba(0, 0, 0, 0.2) !important;
+	border: 1px solid rgba(255, 255, 255, 0.08) !important;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+body[data-theme="dark"] .post-card:hover {
+	border-color: rgba(255, 255, 255, 0.2) !important;
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4) !important;
+	transform: translateY(-5px);
+}
+
+body[data-theme="dark"] .post-card .post-card-content {
+	background: transparent !important;
+}
+
+body[data-theme="dark"] .post-card-excerpt {
+	color: rgba(255, 255, 255, 0.7) !important;
+}
+
+body[data-theme="dark"] .post-card-date {
+	color: rgba(255, 255, 255, 0.5) !important;
+}
+
+body[data-theme="dark"] .search-pagination .page-numbers {
+	background: rgba(255, 255, 255, 0.1) !important;
+	border-color: rgba(255, 255, 255, 0.2) !important;
+	color: #fff !important;
+}
+
+body[data-theme="dark"] .search-pagination .page-numbers.current,
+body[data-theme="dark"] .search-pagination .page-numbers:hover {
+	background: #fff !important;
+	color: #39496a !important;
+}
+
+/* ---------- TEXT READABILITY (Overrides inline styles) ---------- */
+body[data-theme="dark"] .section-title,
+body[data-theme="dark"] .section-label,
+body[data-theme="dark"] .section-description,
+body[data-theme="dark"] .hero-title,
+body[data-theme="dark"] .hero-subtitle {
+	color: #fff !important;
+}
+
+/* ---------- CONTACT SECTION REFINEMENTS ---------- */
+body[data-theme="dark"] .contact-form {
+	background: var(--dark-gradient) !important;
+	box-shadow: var(--dark-shadow) !important;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] .contact-form label {
+	color: #fff !important;
+}
+
+body[data-theme="dark"] .contact-form input,
+body[data-theme="dark"] .contact-form textarea {
+	background: rgba(255, 255, 255, 0.05) !important;
+	border-color: rgba(255, 255, 255, 0.1) !important;
+	color: #fff !important;
+}
+
+body[data-theme="dark"] .contact-form input::placeholder,
+body[data-theme="dark"] .contact-form textarea::placeholder {
+	color: rgba(255, 255, 255, 0.3) !important;
+}
+
+body[data-theme="dark"] .contact-info-item .value,
+body[data-theme="dark"] .contact-info-item .label,
+body[data-theme="dark"] .social-links .label {
+	color: #39496a !important;
+}
+
+body[data-theme="dark"] .contact-info-icon,
+body[data-theme="dark"] .social-link {
+	background: rgba(57, 73, 106, 0.1) !important;
+}
+
+body[data-theme="dark"] .contact-info-icon svg,
+body[data-theme="dark"] .social-link svg {
+	color: #39496a !important;
+}
+
+/* ---------- PROCESS SECTION REFINEMENTS ---------- */
+body[data-theme="dark"] .process-number {
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body[data-theme="dark"] .process-number span {
+	color: #fff !important;
+}
+
+body[data-theme="dark"] .process-nav-btn {
+	border-color: rgba(255, 255, 255, 0.2);
+	color: #fff !important;
+}
+
+/* ---------- TEAM CARD BACK REFINEMENTS ---------- */
+body[data-theme="dark"] .team-card-back {
+	background: var(--dark-gradient) !important;
+	box-shadow: var(--dark-shadow) !important;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] .team-card-back .back-name,
+body[data-theme="dark"] .team-card-back .back-role,
+body[data-theme="dark"] .team-card-back .back-bio {
+	color: #fff !important;
+}
+
+body[data-theme="dark"] .team-card-back .back-header {
+	border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] .team-card-back .back-decoration .bar {
+	background: linear-gradient(to right, #fff, rgba(255, 255, 255, 0.3));
+}
+
+body[data-theme="dark"] .team-card-back .back-avatar {
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- CULTURE SECTION REFINEMENTS ---------- */
+body[data-theme="dark"] .culture-content .section-title,
+body[data-theme="dark"] .culture-content .section-description,
+body[data-theme="dark"] .culture-content .section-label {
+	color: #fff !important;
+}
+
+body[data-theme="dark"] .value-card {
+	background: rgba(255, 255, 255, 0.05);
+	border-color: rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] .value-card h3,
+body[data-theme="dark"] .value-card p {
+	color: #fff !important;
+}
+
+body[data-theme="dark"] .culture-cta {
+	background: #fff;
+	color: #39496a;
+}
+
+/* ---------- BASE UTILITIES ---------- */
+body[data-theme="dark"] .btn-primary {
+	background: #fff;
+	color: #39496a !important;
+}
+
+body[data-theme="dark"] .btn-outline {
+	border-color: rgba(255, 255, 255, 0.5);
+	color: #fff;
+}
+
+/* ---------- GRADIENT-BG UTILITY ---------- */
+body[data-theme="dark"] .gradient-bg {
+	background: var(--dark-gradient);
+	box-shadow: var(--dark-shadow);
+}
+
+/* ---------- GLASS CARD (ajuste sutil) ---------- */
+body[data-theme="dark"] .glass-card {
+	background: rgba(0, 0, 0, 0.15);
+	border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- PARTNERS SECTION REFINEMENTS ---------- */
+body[data-theme="dark"] .partners-carousel .fade-left {
+	background: linear-gradient(to right, #717d91, transparent);
+}
+
+body[data-theme="dark"] .partners-carousel .fade-right {
+	background: linear-gradient(to left, #717d91, transparent);
+}
+
+@media (max-width: 768px) {
+	body[data-theme="dark"] .partners-carousel .fade-left {
+		background: transparent;
+	}
+
+	body[data-theme="dark"] .partners-carousel .fade-right {
+		background: transparent;
+	}
+}
+
+/* ---------- TRANSITION SUAVE ---------- */
+body,
+section,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+button,
+svg {
+	transition:
+		background 0.4s ease,
+		color 0.4s ease,
+		border-color 0.4s ease,
+		box-shadow 0.4s ease;
+}

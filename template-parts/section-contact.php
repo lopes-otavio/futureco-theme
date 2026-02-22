@@ -20,6 +20,7 @@ $titulo = $contato_group['titulo'] ?? 'Vamos conversar sobre seu <span style="co
 if (get_field('ativar') !== false) :
 ?>
 <section class="contact-section section-padding" id="contato">
+  <div class="decorative-bg"></div>
   <div class="container">
     <!-- Section Header -->
     <div class="section-header">
@@ -57,11 +58,12 @@ if (get_field('ativar') !== false) :
               <?php endif; ?>
 
               <?php if ($valor2) : ?>
-                <?php if ($link2) : ?>
-                <a href="<?php echo esc_url($link2); ?>" class="value" style="display:block; margin-top:4px;"><?php echo esc_html($valor2); ?></a>
-                <?php else : ?>
-                <p class="value" style="display:block; margin-top:4px;"><?php echo esc_html($valor2); ?></p>
-                <?php endif; ?>
+              <?php if ($link2) : ?>
+              <a href="<?php echo esc_url($link2); ?>" class="value"
+                style="display:block; margin-top:4px;"><?php echo esc_html($valor2); ?></a>
+              <?php else : ?>
+              <p class="value" style="display:block; margin-top:4px;"><?php echo esc_html($valor2); ?></p>
+              <?php endif; ?>
               <?php endif; ?>
             </div>
           </div>
@@ -129,3 +131,4 @@ if (get_field('ativar') !== false) :
     </div>
   </div>
 </section>
+<?php endif; ?>

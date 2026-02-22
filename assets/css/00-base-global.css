@@ -140,6 +140,25 @@ main {
 	border-color: rgba(255, 255, 255, 0.5);
 }
 
+.decorative-bg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to left, rgba(42, 54, 80, 0.5), transparent);
+}
+.team-section .decorative-blob {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 24rem;
+	height: 24rem;
+	background: rgba(154, 167, 184, 0.1);
+	border-radius: 50%;
+	filter: blur(48px);
+}
+
 /* SECTION SPACING */
 .section-padding {
 	padding-top: 4rem;

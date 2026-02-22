@@ -63,13 +63,14 @@ function futureco_scripts() {
 
     // Modulos JavaScript
     $modules = array(
-        'futureco-header'     => '/assets/js/modules/header.js',
-        'futureco-animations' => '/assets/js/modules/animations.js',
-        'futureco-carousel'   => '/assets/js/modules/carousel.js',
-        'futureco-slider'     => '/assets/js/modules/slider.js',
-        'futureco-forms'      => '/assets/js/modules/forms.js',
-        'futureco-faq'        => '/assets/js/modules/faq.js',
-        'futureco-general'    => '/assets/js/modules/general.js',
+        'futureco-header'          => '/assets/js/modules/header.js',
+        'futureco-animations'      => '/assets/js/modules/animations.js',
+        'futureco-carousel'        => '/assets/js/modules/carousel.js',
+        'futureco-slider'          => '/assets/js/modules/slider.js',
+        'futureco-forms'           => '/assets/js/modules/forms.js',
+        'futureco-faq'             => '/assets/js/modules/faq.js',
+        'futureco-general'         => '/assets/js/modules/general.js',
+        'futureco-theme-switcher'  => '/assets/js/modules/theme-switcher.js',
     );
 
     foreach ($modules as $handle => $path) {

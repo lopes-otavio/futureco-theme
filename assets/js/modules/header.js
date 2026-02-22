@@ -112,6 +112,15 @@ document.addEventListener("DOMContentLoaded", () => {
 			setIcons(open);
 		});
 
+		// Botão de fechar (X) dentro do menu mobile
+		const closeBtn = menu.querySelector(".mobile-menu-close");
+		if (closeBtn) {
+			closeBtn.addEventListener("click", () => {
+				menu.classList.remove("open");
+				setIcons(false);
+			});
+		}
+
 		// ao clicar num link, fecha o menu
 		menu.querySelectorAll("a").forEach((a) => {
 			a.addEventListener("click", () => {

@@ -54,6 +54,12 @@ body[data-theme="dark"] .team-section {
 	box-shadow: none !important;
 }
 
+body[data-theme="dark"] .team-section .section-title .text-gradient {
+	background: var(--dark-gradient) !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+}
+
 body[data-theme="dark"] .team-section .section-title,
 body[data-theme="dark"] .team-section .section-label {
 	color: #39496a !important;
@@ -66,6 +72,12 @@ body[data-theme="dark"] .team-nav-btn {
 
 body[data-theme="dark"] .team-nav-btn:hover {
 	background: rgba(57, 73, 106, 0.699) !important;
+}
+
+body[data-theme="dark"] .contact-section .section-title {
+	background: var(--dark-gradient) !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
 }
 
 body[data-theme="dark"] .post-card-title,
@@ -179,18 +191,50 @@ body[data-theme="dark"] .social-links .label {
 
 body[data-theme="dark"] .contact-info-icon,
 body[data-theme="dark"] .social-link {
-	background: rgba(57, 73, 106, 0.1) !important;
+	background: var(--dark-gradient) !important;
+	box-shadow: var(--dark-shadow) !important;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] .contact-info-icon img,
+body[data-theme="dark"] .social-link img {
+	filter: brightness(0) invert(1) !important;
 }
 
 body[data-theme="dark"] .contact-info-icon svg,
 body[data-theme="dark"] .social-link svg {
-	color: #39496a !important;
+	color: #fff !important;
 }
 
 /* ---------- PROCESS SECTION REFINEMENTS ---------- */
+body[data-theme="dark"] .process-card {
+	background: rgba(0, 0, 0, 0.2) !important;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+	border: 1px solid rgba(255, 255, 255, 0.1) !important;
+	transition: all 0.5s ease;
+}
+
+body[data-theme="dark"] .process-card:hover {
+	border-color: rgba(255, 255, 255, 0.2) !important;
+	background: rgba(0, 0, 0, 0.3) !important;
+}
+
+body[data-theme="dark"] .process-card h3,
+body[data-theme="dark"] .process-card p,
+body[data-theme="dark"] .process-card .process-details li {
+	color: #fff !important;
+}
+
+body[data-theme="dark"] .process-card .process-details li .dot {
+	background: #fff;
+	opacity: 0.5;
+}
+
 body[data-theme="dark"] .process-number {
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.1) !important;
 	border: 1px solid rgba(255, 255, 255, 0.2);
+	backdrop-filter: blur(4px);
 }
 
 body[data-theme="dark"] .process-number span {
@@ -224,6 +268,27 @@ body[data-theme="dark"] .team-card-back .back-decoration .bar {
 }
 
 body[data-theme="dark"] .team-card-back .back-avatar {
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- TEAM CARD FRONT REFINEMENTS ---------- */
+body[data-theme="dark"] .team-card-front {
+	box-shadow: var(--dark-shadow) !important;
+	background: var(--dark-gradient) !important;
+}
+
+body[data-theme="dark"] .team-card-front .member-name-box {
+	background: rgba(255, 255, 255, 0.1) !important;
+	backdrop-filter: blur(4px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+body[data-theme="dark"] .team-card-front .member-name-box h3 {
+	color: #fff !important;
+}
+
+body[data-theme="dark"] .team-card-front .member-role-badge {
+	background: rgba(0, 0, 0, 0.3) !important;
 	border: 1px solid rgba(255, 255, 255, 0.1);
 }
 

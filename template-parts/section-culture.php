@@ -14,7 +14,7 @@ $cards = $cultura_group['cards'] ?? array();
 if (get_field('ativar') !== false) :
 ?>
 <section class="culture-section section-padding" id="sobre">
-  <div class="decorative-bg"></div>
+  <!-- <div class="decorative-bg"></div> -->
   <div class="container" style="position:relative;z-index:1;">
     <!-- Banner Image -->
     <div class="culture-banner scroll-animate">

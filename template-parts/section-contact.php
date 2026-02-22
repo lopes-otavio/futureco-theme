@@ -20,7 +20,7 @@ $titulo = $contato_group['titulo'] ?? 'Vamos conversar sobre seu <span style="co
 if (get_field('ativar') !== false) :
 ?>
 <section class="contact-section section-padding" id="contato">
-  <div class="decorative-bg"></div>
+  <!-- <div class="decorative-bg"></div> -->
   <div class="container">
     <!-- Section Header -->
     <div class="section-header">

@@ -13,7 +13,7 @@ $equipe = $equipe_group['equipe'] ?? array();
 if (get_field('ativar') !== false) :
 ?>
 <section class="team-section section-padding" id="equipe">
-  <div class="decorative-bg"></div>
+  <!-- <div class="decorative-bg"></div> -->
   <div class="decorative-blob"></div>
   <div class="container" style="position:relative;z-index:1;">
     <!-- Header -->
@@ -84,8 +84,7 @@ if (get_field('ativar') !== false) :
                 <div class="back-header">
                   <div class="back-avatar">
                     <?php if (!empty($member['foto'])): ?>
-                    <img src="<?php echo esc_url($member['foto']); ?>"
-                      alt="<?php echo esc_attr($member['nome']); ?>">
+                    <img src="<?php echo esc_url($member['foto']); ?>" alt="<?php echo esc_attr($member['nome']); ?>">
                     <?php else: ?>
                     <span><?php echo esc_html(strtoupper($initials)); ?></span>
                     <?php endif; ?>

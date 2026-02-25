@@ -14,8 +14,8 @@ $contacts = new WP_Query(array(
 ?>
 <?php
 $contato_group = get_field('contato_section');
-$label_sessao = $contato_group['label_sessao'] ?? 'ENTRE EM CONTATO';
-$titulo = $contato_group['titulo'] ?? 'Vamos conversar sobre seu <span style="color:#9AA7B8;">projeto?</span>';
+$label_sessao = $contato_group['label_sessao'] ?? (function_exists('pll__') ? pll__('ENTRE EM CONTATO') : __('ENTRE EM CONTATO', 'futureco'));
+$titulo = $contato_group['titulo'] ?? (function_exists('pll__') ? pll__('Vamos conversar sobre seu <span style="color:#9AA7B8;">projeto?</span>') : __('Vamos conversar sobre seu <span style="color:#9AA7B8;">projeto?</span>', 'futureco'));
 
 if (get_field('ativar') !== false) :
 ?>
@@ -76,7 +76,9 @@ if (get_field('ativar') !== false) :
 
         <!-- Social Links -->
         <div class="social-links">
-          <p class="label">Siga-nos nas redes sociais</p>
+          <p class="label">
+            <?php echo function_exists('pll__') ? pll__('Siga-nos nas redes sociais') : __('Siga-nos nas redes sociais', 'futureco'); ?>
+          </p>
           <div class="links">
             <?php futureco_display_social_links('social-link'); ?>
           </div>
@@ -88,36 +90,46 @@ if (get_field('ativar') !== false) :
         <form class="contact-form" id="contact-form">
           <div class="form-row">
             <div class="form-group">
-              <label for="contact-name">Nome *</label>
-              <input type="text" id="contact-name" name="name" placeholder="Seu nome completo" required>
+              <label
+                for="contact-name"><?php echo function_exists('pll__') ? pll__('Nome *') : __('Nome *', 'futureco'); ?></label>
+              <input type="text" id="contact-name" name="name"
+                placeholder="<?php echo function_exists('pll__') ? pll__('Seu nome completo') : __('Seu nome completo', 'futureco'); ?>"
+                required>
               <span class="error-message"></span>
             </div>
             <div class="form-group">
-              <label for="contact-email">Email *</label>
+              <label
+                for="contact-email"><?php echo function_exists('pll__') ? pll__('Email *') : __('Email *', 'futureco'); ?></label>
               <input type="email" id="contact-email" name="email" placeholder="seu@email.com" required>
               <span class="error-message"></span>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="contact-phone">Telefone</label>
-              <input type="tel" id="contact-phone" name="phone" placeholder="(00) 00000-0000">
+              <label
+                for="contact-phone"><?php echo function_exists('pll__') ? pll__('Telefone') : __('Telefone', 'futureco'); ?></label>
+              <input type="tel" id="contact-phone" name="phone"
+                placeholder="<?php echo function_exists('pll__') ? pll__('(00) 00000-0000') : __('(00) 00000-0000', 'futureco'); ?>">
               <span class="error-message"></span>
             </div>
             <div class="form-group">
-              <label for="contact-company">Empresa</label>
-              <input type="text" id="contact-company" name="company" placeholder="Nome da empresa">
+              <label
+                for="contact-company"><?php echo function_exists('pll__') ? pll__('Empresa') : __('Empresa', 'futureco'); ?></label>
+              <input type="text" id="contact-company" name="company"
+                placeholder="<?php echo function_exists('pll_esc_attr') ? pll_esc_attr('Nome da empresa') : esc_attr__('Nome da empresa', 'futureco'); ?>">
             </div>
           </div>
           <div class="form-group">
-            <label for="contact-message">Mensagem *</label>
-            <textarea id="contact-message" name="message" rows="5" placeholder="Conte-nos sobre seu projeto..."
+            <label
+              for="contact-message"><?php echo function_exists('pll__') ? pll__('Mensagem *') : __('Mensagem *', 'futureco'); ?></label>
+            <textarea id="contact-message" name="message" rows="5"
+              placeholder="<?php echo function_exists('pll_esc_attr') ? pll_esc_attr('Conte-nos sobre seu projeto...') : esc_attr__('Conte-nos sobre seu projeto...', 'futureco'); ?>"
               required></textarea>
             <span class="error-message"></span>
           </div>
           <div class="form-submit">
             <button type="submit" class="btn-primary">
-              <span>Enviar Mensagem</span>
+              <span><?php echo function_exists('pll__') ? pll__('Enviar Mensagem') : __('Enviar Mensagem', 'futureco'); ?></span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <line x1="22" y1="2" x2="11" y2="13" />

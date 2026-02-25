@@ -101,13 +101,7 @@
 	font-weight: 700;
 	font-size: 1.25rem;
 	letter-spacing: -0.025em;
-	display: none;
-}
-
-@media (min-width: 640px) {
-	.site-header .logo-text {
-		display: block;
-	}
+	display: block;
 }
 
 /* ============================================

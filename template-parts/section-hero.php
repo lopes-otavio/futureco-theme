@@ -6,8 +6,9 @@
 ?>
 <?php
 $hero = get_field('hero_section');
-$titulo = $hero['titulo'] ?? 'Transforme sua presença digital em resultados reais';
-$descricao = $hero['descricao'] ?? 'Somos uma agência de marketing digital 360° especializada em criar estratégias que conectam marcas ao seu público e geram crescimento sustentável.';
+$titulo = $hero['titulo'] ?? (function_exists('pll__') ? pll__('Transforme sua presença digital em resultados reais') : __('Transforme sua presença digital em resultados reais', 'futureco'));
+$label_sessao = $hero['label_sessao'] ?? (function_exists('pll__') ? pll__('Transformando ideias ousadas em realidades') : __('Transformando ideias ousadas em realidades', 'futureco'));
+$descricao = $hero['descricao'] ?? (function_exists('pll__') ? pll__('Somos uma agência de marketing digital 360° especializada em criar estratégias que conectam marcas ao seu público e geram crescimento sustentável.') : __('Somos uma agência de marketing digital 360° especializada em criar estratégias que conectam marcas ao seu público e geram crescimento sustentável.', 'futureco'));
 $background = $hero['background'] ?? futureco_image('futureco-hero-bg.png');
 
 if (get_field('ativar') !== false) :
@@ -28,7 +29,7 @@ if (get_field('ativar') !== false) :
       <!-- Badge -->
       <div class="hero-badge scroll-animate">
         <span class="dot"></span>
-        <span>Transformando ideias ousadas em realidades</span>
+        <span><?= $label_sessao; ?></span>
       </div>
 
       <!-- Title -->
@@ -44,7 +45,7 @@ if (get_field('ativar') !== false) :
       <!-- Buttons -->
       <div class="hero-buttons scroll-animate delay-300">
         <a href="#contato" class="btn-primary">
-          Comece Agora
+          <?php echo function_exists('pll__') ? pll__('Comece Agora') : __('Comece Agora', 'futureco'); ?>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12" />
@@ -52,7 +53,7 @@ if (get_field('ativar') !== false) :
           </svg>
         </a>
         <a href="#servicos" class="btn-outline">
-          Nossos Serviços
+          <?php echo function_exists('pll__') ? pll__('Nossos Serviços') : __('Nossos Serviços', 'futureco'); ?>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <polyline points="6 9 12 15 18 9" />

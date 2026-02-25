@@ -6,9 +6,7 @@
     <!-- Big Tagline -->
     <div class="footer-tagline">
       <h2>
-        ESTRATÉGIA<br>
-        <span class="text-gradient">QUE CONSTRÓI</span><br>
-        O FUTURO
+        <?php echo function_exists('pll__') ? pll__('ESTRATÉGIA QUE CONSTRÓI O FUTURO') : __('ESTRATÉGIA QUE CONSTRÓI O FUTURO', 'futureco'); ?>
       </h2>
     </div>
     <?php endif; ?>
@@ -22,7 +20,7 @@
           <span>Future CO</span>
         </a>
         <p class="description">
-          Transformando negócios através de estratégias de marketing digital que geram resultados reais.
+          <?php echo function_exists('pll__') ? pll__('Transformando negócios através de estratégias de marketing digital que geram resultados reais.') : __('Transformando negócios através de estratégias de marketing digital que geram resultados reais.', 'futureco'); ?>
         </p>
         <div class="footer-social">
           <?php futureco_display_social_links(); ?>
@@ -31,7 +29,7 @@
 
       <!-- Services Links -->
       <div class="footer-links">
-        <h3>Serviços</h3>
+        <h3><?php echo function_exists('pll__') ? pll__('Serviços') : __('Serviços', 'futureco'); ?></h3>
         <?php
         wp_nav_menu(array(
             'menu'           => futureco_get_menu_name('Serviços'),
@@ -45,7 +43,7 @@
 
       <!-- Company Links -->
       <div class="footer-links">
-        <h3>Empresa</h3>
+        <h3><?php echo function_exists('pll__') ? pll__('Empresa') : __('Empresa', 'futureco'); ?></h3>
         <?php
         wp_nav_menu(array(
             'menu'           => futureco_get_menu_name('Empresa'),
@@ -59,7 +57,7 @@
 
       <!-- Support Links -->
       <div class="footer-links">
-        <h3>Suporte</h3>
+        <h3><?php echo function_exists('pll__') ? pll__('Suporte') : __('Suporte', 'futureco'); ?></h3>
         <?php
         wp_nav_menu(array(
             'menu'           => futureco_get_menu_name('Suporte'),
@@ -73,11 +71,11 @@
 
       <!-- Newsletter -->
       <div class="footer-newsletter">
-        <h3>Newsletter</h3>
-        <p>Receba dicas e novidades sobre marketing digital.</p>
+        <h3><?php echo function_exists('pll__') ? pll__('Newsletter') : __('Newsletter', 'futureco'); ?></h3>
+        <p><?php echo function_exists('pll__') ? pll__('Receba dicas e novidades sobre marketing digital.') : __('Receba dicas e novidades sobre marketing digital.', 'futureco'); ?></p>
         <form class="newsletter-form" id="newsletter-form">
-          <input type="email" name="email" placeholder="Seu email" required>
-          <button type="submit">Enviar</button>
+          <input type="email" name="email" placeholder="<?php echo function_exists('pll_esc_attr') ? pll_esc_attr('Seu email') : esc_attr__('Seu email', 'futureco'); ?>" required>
+          <button type="submit"><?php echo function_exists('pll__') ? pll__('Enviar') : __('Enviar', 'futureco'); ?></button>
         </form>
         <div class="footer-badges">
           <img src="<?php echo futureco_image('selo-google.png'); ?>" alt="Google Badge" class="badge-google">
@@ -90,10 +88,10 @@
   <!-- Bottom Bar -->
   <div class="container">
     <div class="footer-bottom">
-      <p>&copy; <?php echo date('Y'); ?> Future CO. Todos os direitos reservados.</p>
+      <p><?php printf(function_exists('pll__') ? pll__('&copy; %s Future CO - Todos os direitos reservados') : __('&copy; %s Future CO - Todos os direitos reservados', 'futureco'), date('Y')); ?></p>
       <div class="footer-bottom-links">
-        <a href="#">Política de Privacidade</a>
-        <a href="#">Termos de Uso</a>
+        <a href="#"><?php echo function_exists('pll__') ? pll__('Política de Privacidade') : __('Política de Privacidade', 'futureco'); ?></a>
+        <a href="#"><?php echo function_exists('pll__') ? pll__('Termos de Uso') : __('Termos de Uso', 'futureco'); ?></a>
       </div>
     </div>
   </div>

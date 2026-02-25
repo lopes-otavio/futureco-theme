@@ -30,6 +30,9 @@ function futureco_setup() {
         'primary' => __('Menu Principal', 'futureco'),
         'footer'  => __('Menu Footer', 'futureco'),
     ));
+
+    // Load translations
+    load_theme_textdomain('futureco', get_template_directory() . '/languages');
 }
 add_action('after_setup_theme', 'futureco_setup');
 
@@ -82,6 +85,12 @@ function futureco_scripts() {
             true
         );
     }
+
+    // Localize theme switcher script
+    wp_localize_script('futureco-theme-switcher', 'futurecoThemeData', array(
+        'modoEscuro' => function_exists('pll__') ? pll__('Modo Escuro') : __('Modo Escuro', 'futureco'),
+        'modoClaro'  => function_exists('pll__') ? pll__('Modo Claro') : __('Modo Claro', 'futureco'),
+    ));
 
     // Localize script with theme data (attached to forms module)
     wp_localize_script('futureco-forms', 'futurecoData', array(
@@ -228,3 +237,61 @@ function futureco_get_menu_name($base_name) {
     }
     return $base_name;
 }
+
+/**
+ * Register strings for Polylang translation
+ */
+function futureco_register_strings() {
+    if (function_exists('pll_register_string')) {
+        // Header
+        pll_register_string('Modo Escuro', 'Modo Escuro', 'Future CO Header');
+        pll_register_string('Modo Claro', 'Modo Claro', 'Future CO Header');
+        pll_register_string('Fale Conosco', 'Fale Conosco', 'Future CO Header');
+        pll_register_string('SIGA FUTURE CO NAS REDES SOCIAIS', 'SIGA FUTURE CO NAS REDES SOCIAIS', 'Future CO Header');
+        pll_register_string('CNPJ: 00.000.000/0001-00', 'CNPJ: 00.000.000/0001-00', 'Future CO Header');
+        pll_register_string('Fechar menu', 'Fechar menu', 'Future CO Header');
+        pll_register_string('Alternar modo escuro', 'Alternar modo escuro', 'Future CO Header');
+        pll_register_string('Menu mobile', 'Menu mobile', 'Future CO Header');
+        pll_register_string('Menu main', 'Menu', 'Future CO Header');
+        pll_register_string('Menu principal', 'Menu principal', 'Future CO Header');
+
+        // Hero
+        pll_register_string('Comece Agora', 'Comece Agora', 'Future CO Hero');
+        pll_register_string('Nossos Serviços', 'Nossos Serviços', 'Future CO Hero');
+        pll_register_string('Transforme sua presença digital em resultados reais', 'Transforme sua presença digital em resultados reais', 'Future CO Hero');
+        pll_register_string('Transformando ideias ousadas em realidades', 'Transformando ideias ousadas em realidades', 'Future CO Hero');
+        pll_register_string('Somos uma agência de marketing digital 360° especializada em criar estratégias que conectam marcas ao seu público e geram crescimento sustentável.', 'Somos uma agência de marketing digital 360° especializada em criar estratégias que conectam marcas ao seu público e geram crescimento sustentável.', 'Future CO Hero');
+
+        // Contact
+        pll_register_string('Siga-nos nas redes sociais', 'Siga-nos nas redes sociais', 'Future CO Contact');
+        pll_register_string('ENTRE EM CONTATO', 'ENTRE EM CONTATO', 'Future CO Contact');
+        pll_register_string('Vamos conversar sobre seu projeto title', 'Vamos conversar sobre seu <span style="color:#9AA7B8;">projeto?</span>', 'Future CO Contact');
+        pll_register_string('Nome *', 'Nome *', 'Future CO Contact');
+        pll_register_string('Seu nome completo', 'Seu nome completo', 'Future CO Contact');
+        pll_register_string('Email *', 'Email *', 'Future CO Contact');
+        pll_register_string('Telefone', 'Telefone', 'Future CO Contact');
+        pll_register_string('(00) 00000-0000', '(00) 00000-0000', 'Future CO Contact');
+        pll_register_string('Empresa', 'Empresa', 'Future CO Contact');
+        pll_register_string('Nome da empresa', 'Nome da empresa', 'Future CO Contact');
+        pll_register_string('Mensagem *', 'Mensagem *', 'Future CO Contact');
+        pll_register_string('Conte-nos sobre seu projeto...', 'Conte-nos sobre seu projeto...', 'Future CO Contact');
+        pll_register_string('Enviar Mensagem', 'Enviar Mensagem', 'Future CO Contact');
+
+        // Footer
+        pll_register_string('ESTRATÉGIA QUE CONSTRÓI O FUTURO', 'ESTRATÉGIA QUE CONSTRÓI O FUTURO', 'Future CO Footer');
+        pll_register_string('Transformando negócios através de estratégias de marketing digital que geram resultados reais.', 'Transformando negócios através de estratégias de marketing digital que geram resultados reais.', 'Future CO Footer');
+        pll_register_string('Serviços', 'Serviços', 'Future CO Footer');
+        pll_register_string('Empresa', 'Empresa', 'Future CO Footer');
+        pll_register_string('Suporte', 'Suporte', 'Future CO Footer');
+        pll_register_string('Newsletter', 'Newsletter', 'Future CO Footer');
+        pll_register_string('Receba dicas e novidades sobre marketing digital.', 'Receba dicas e novidades sobre marketing digital.', 'Future CO Footer');
+        pll_register_string('Seu email', 'Seu email', 'Future CO Footer');
+        pll_register_string('Enviar', 'Enviar', 'Future CO Footer');
+        pll_register_string('Future CO. Todos os direitos reservados.', 'Future CO. Todos os direitos reservados.', 'Future CO Footer');
+        pll_register_string('Política de Privacidade', 'Política de Privacidade', 'Future CO Footer');
+        pll_register_string('Termos de Uso', 'Termos de Uso', 'Future CO Footer');
+        pll_register_string('Total Links', 'Total Links', 'Future CO Footer');
+        pll_register_string('&copy; %s Future CO - Todos os direitos reservados', '&copy; %s Future CO - Todos os direitos reservados', 'Future CO Footer');
+    }
+}
+add_action('after_setup_theme', 'futureco_register_strings');

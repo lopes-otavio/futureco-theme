@@ -95,6 +95,20 @@ document.addEventListener("DOMContentLoaded", function () {
 				showError(messageInput, "A mensagem é obrigatória.");
 			}
 
+			// Validate reCAPTCHA
+			const recaptchaResponse = contactForm.querySelector(
+				'[name="g-recaptcha-response"]',
+			);
+			const recaptchaError = document.getElementById("recaptcha-error");
+			if (recaptchaError) recaptchaError.textContent = "";
+
+			if (recaptchaResponse && !recaptchaResponse.value) {
+				if (recaptchaError)
+					recaptchaError.textContent =
+						"Por favor, confirme que você não é um robô.";
+				hasError = true;
+			}
+
 			if (hasError) return;
 
 			// Change button state
@@ -140,6 +154,10 @@ document.addEventListener("DOMContentLoaded", function () {
 					if (submitBtnText) submitBtnText.textContent = initialBtnText;
 					else submitBtn.textContent = initialBtnText;
 					submitBtn.disabled = false;
+					// Reset reCAPTCHA widget
+					if (typeof grecaptcha !== "undefined") {
+						grecaptcha.reset();
+					}
 				});
 		});
 	}

@@ -6,8 +6,8 @@
 ?>
 <?php
 $testemunhas_group = get_field('testemunhas_section');
-$label_sessao = $testemunhas_group['label_sessao'] ?? 'DEPOIMENTOS';
-$titulo = $testemunhas_group['titulo'] ?? 'O que nossos <span class="text-gradient">clientes dizem</span>';
+$label_sessao = $testemunhas_group['label_sessao'] ?? '';
+$titulo = $testemunhas_group['titulo'] ?? '';
 $testemunhas = $testemunhas_group['testemunhas'] ?? array();
 
 if (get_field('ativar') !== false) :

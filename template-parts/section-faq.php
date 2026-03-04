@@ -6,15 +6,15 @@
 ?>
 <?php
 $faq_group = get_field('faq_section');
-$label_sessao = $faq_group['label_sessao'] ?? 'FAQ';
-$titulo = $faq_group['titulo'] ?? 'Perguntas <span class="text-gradient">Frequentes</span>';
-$descricao = $faq_group['descricao'] ?? 'Tire suas dúvidas sobre nossos serviços e metodologia de trabalho.';
+$label_sessao = $faq_group['label_sessao'] ?? '';
+$titulo = $faq_group['titulo'] ?? '';
+$descricao = $faq_group['descricao'] ?? '';
 $faqs = $faq_group['perguntas'] ?? array();
 
 // New fields
 $imagem = $faq_group['imagem'] ?? '';
 $texto_funcionario = $faq_group['texto_funcionario'] ?? '';
-$link_botao = $faq_group['link_botao'] ?? '#contato';
+$link_botao = $faq_group['link_botao'] ?? '';
 
 if (get_field('ativar') !== false) :
 ?>
@@ -47,7 +47,7 @@ if (get_field('ativar') !== false) :
             </p>
 
             <a href="<?php echo esc_url($link_botao); ?>" class="btn-faq-ask" target="_blank">
-              <span>Faça uma pergunta</span>
+              <span><?= pll__('Faca uma pergunta'); ?></span>
               <div class="btn-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path

@@ -6,8 +6,8 @@
 ?>
 <?php
 $equipe_group = get_field('equipe_section');
-$label_sessao = $equipe_group['label_sessao'] ?? 'CONHEÇA NOSSO TIME';
-$titulo = $equipe_group['titulo'] ?? 'Nossa <span class="text-gradient">Equipe</span>';
+$label_sessao = $equipe_group['label_sessao'] ?? '';
+$titulo = $equipe_group['titulo'] ?? '';
 $equipe = $equipe_group['equipe'] ?? array();
 
 if (get_field('ativar') !== false) :

@@ -6,9 +6,9 @@
 ?>
 <?php
 $processo_group = get_field('processo_section');
-$label_sessao = $processo_group['label_sessao'] ?? 'COMO TRABALHAMOS';
-$titulo = $processo_group['titulo'] ?? 'Nossa Metodologia';
-$descricao = $processo_group['descricao'] ?? 'Um processo estruturado em três pilares que garante resultados consistentes e mensuráveis.';
+$label_sessao = $processo_group['label_sessao'] ?? '';
+$titulo = $processo_group['titulo'] ?? '';
+$descricao = $processo_group['descricao'] ?? '';
 $cards = $processo_group['cards'] ?? array();
 
 if (get_field('ativar') !== false) :

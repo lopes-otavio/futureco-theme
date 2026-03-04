@@ -6,9 +6,9 @@
 ?>
 <?php
 $cultura_group = get_field('cultura_section');
-$label_sessao = $cultura_group['label_sessao'] ?? 'QUEM SOMOS';
-$titulo = $cultura_group['titulo'] ?? 'Nossa Cultura';
-$descricao = $cultura_group['descricao'] ?? 'Acreditamos que o sucesso nasce da combinação entre inovação, transparência e paixão pelo que fazemos. Nossa cultura é o alicerce de cada projeto que entregamos.';
+$label_sessao = $cultura_group['label_sessao'] ?? '';
+$titulo = $cultura_group['titulo'] ?? '';
+$descricao = $cultura_group['descricao'] ?? '';
 $cards = $cultura_group['cards'] ?? array();
 
 if (get_field('ativar') !== false) :
@@ -31,7 +31,7 @@ if (get_field('ativar') !== false) :
           <?php echo esc_html($descricao); ?>
         </p>
         <a href="#contato" class="culture-cta">
-          Junte-se a nós
+          <?= pll__('Junte-se a nós'); ?>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12" />

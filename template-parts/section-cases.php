@@ -58,6 +58,10 @@ if (get_field('ativar') !== false) :
       </div>
       <?php endforeach; endif; ?>
     </div>
+
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="<?php echo esc_url(home_url('/cases')); ?>" class="btn-primary"><?= pll__('Ver Mais'); ?></a>
+    </div>
   </div>
 </section>
 <?php endif; ?>

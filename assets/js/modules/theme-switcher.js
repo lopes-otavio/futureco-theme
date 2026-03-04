@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			// Atualiza label
 			const label = btn.querySelector(".theme-switcher__label");
 			if (label) {
-				label.textContent = theme === "dark" ? "Modo Escuro" : "Modo Claro";
+				// label.textContent = theme === "dark" ? "Modo Escuro" : "Modo Claro";
 			}
 		});
 	};

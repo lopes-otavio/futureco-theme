@@ -6,7 +6,7 @@
 ?>
 <?php
 $partners_group = get_field('empresas_section');
-$titulo = $partners_group['titulo'] ?? 'Empresas que confiam em nós';
+$titulo = $partners_group['titulo'] ?? '';
 $empresas = $partners_group['empresas'] ?? array();
 
 if (get_field('ativar') !== false) :

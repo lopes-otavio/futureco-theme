@@ -88,15 +88,25 @@ function futureco_scripts() {
 
     // Localize theme switcher script
     wp_localize_script('futureco-theme-switcher', 'futurecoThemeData', array(
-        'modoEscuro' => function_exists('pll__') ? pll__('Modo Escuro') : __('Modo Escuro', 'futureco'),
-        'modoClaro'  => function_exists('pll__') ? pll__('Modo Claro') : __('Modo Claro', 'futureco'),
+        'modoEscuro' => pll__('Modo Escuro'),
+        'modoClaro'  => pll__('Modo Claro'),
     ));
+
+    // reCAPTCHA Form Script
+    wp_enqueue_script(
+        'google-recaptcha',
+        'https://www.google.com/recaptcha/api.js',
+        array(),
+        null,
+        true
+    );
 
     // Localize script with theme data (attached to forms module)
     wp_localize_script('futureco-forms', 'futurecoData', array(
         'ajaxUrl' => admin_url('admin-ajax.php'),
         'nonce'   => wp_create_nonce('futureco_nonce'),
         'themeUri' => FUTURECO_URI,
+        'recaptchaSiteKey' => defined('FUTURECO_RECAPTCHA_SITE_KEY') ? FUTURECO_RECAPTCHA_SITE_KEY : '',
     ));
 }
 add_action('wp_enqueue_scripts', 'futureco_scripts');
@@ -115,6 +125,26 @@ function futureco_contact_form_handler() {
 
     if (empty($name) || empty($email) || empty($message)) {
         wp_send_json_error('Campos obrigatórios não preenchidos.');
+    }
+
+    // Verify reCAPTCHA
+    $recaptcha_response = sanitize_text_field($_POST['g-recaptcha-response'] ?? '');
+    if (empty($recaptcha_response)) {
+        wp_send_json_error('Por favor, confirme que você não é um robô.');
+    }
+
+    $verify_url = 'https://www.google.com/recaptcha/api/siteverify';
+    $verify_data = array(
+        'secret'   => defined('FUTURECO_RECAPTCHA_SECRET_KEY') ? FUTURECO_RECAPTCHA_SECRET_KEY : '',
+        'response' => $recaptcha_response
+    );
+
+    $verify_response = wp_remote_post($verify_url, array('body' => $verify_data));
+    $verify_body = wp_remote_retrieve_body($verify_response);
+    $verify_result = json_decode($verify_body);
+
+    if (empty($verify_result->success) || !$verify_result->success) {
+        wp_send_json_error('Falha na verificação de segurança (reCAPTCHA). Tente novamente.');
     }
 
     // Send email
@@ -278,7 +308,9 @@ function futureco_register_strings() {
         pll_register_string('Enviar Mensagem', 'Enviar Mensagem', 'Future CO Contact');
 
         // Footer
-        pll_register_string('ESTRATÉGIA QUE CONSTRÓI O FUTURO', 'ESTRATÉGIA QUE CONSTRÓI O FUTURO', 'Future CO Footer');
+        pll_register_string('ESTRATÉGIA', 'ESTRATÉGIA', 'Future CO Footer');
+        pll_register_string('QUE CONSTRÓI', 'QUE CONSTRÓI', 'Future CO Footer');
+        pll_register_string('O FUTURO', 'O FUTURO', 'Future CO Footer');
         pll_register_string('Transformando negócios através de estratégias de marketing digital que geram resultados reais.', 'Transformando negócios através de estratégias de marketing digital que geram resultados reais.', 'Future CO Footer');
         pll_register_string('Serviços', 'Serviços', 'Future CO Footer');
         pll_register_string('Empresa', 'Empresa', 'Future CO Footer');
@@ -292,6 +324,18 @@ function futureco_register_strings() {
         pll_register_string('Termos de Uso', 'Termos de Uso', 'Future CO Footer');
         pll_register_string('Total Links', 'Total Links', 'Future CO Footer');
         pll_register_string('&copy; %s Future CO - Todos os direitos reservados', '&copy; %s Future CO - Todos os direitos reservados', 'Future CO Footer');
+
+        // FAQ
+        pll_register_string('Faca uma pergunta', 'Faca uma pergunta', 'Future CO FAQ');
+
+        // Blog & Cases
+        pll_register_string('Ver Mais', 'Ver Mais', 'Future CO Sections');
+
+        // Culture
+        pll_register_string('Junte-se a nós', 'Junte-se a nós', 'Future CO Culture');
+
+        // Services
+        pll_register_string('Saiba mais', 'Saiba mais', 'Future CO Services');
     }
 }
 add_action('after_setup_theme', 'futureco_register_strings');

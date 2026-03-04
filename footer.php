@@ -6,7 +6,10 @@
     <!-- Big Tagline -->
     <div class="footer-tagline">
       <h2>
-        <?php echo function_exists('pll__') ? pll__('ESTRATÉGIA QUE CONSTRÓI O FUTURO') : __('ESTRATÉGIA QUE CONSTRÓI O FUTURO', 'futureco'); ?>
+        <?= pll__('ESTRATÉGIA'); ?>
+        <br>
+        <span class="text-gradient"><?= pll__('QUE CONSTRÓI') ?></span><br>
+        <?= pll__('O FUTURO'); ?>
       </h2>
     </div>
     <?php endif; ?>
@@ -20,7 +23,7 @@
           <span>Future CO</span>
         </a>
         <p class="description">
-          <?php echo function_exists('pll__') ? pll__('Transformando negócios através de estratégias de marketing digital que geram resultados reais.') : __('Transformando negócios através de estratégias de marketing digital que geram resultados reais.', 'futureco'); ?>
+          <?= pll__('Transformando negócios através de estratégias de marketing digital que geram resultados reais.'); ?>
         </p>
         <div class="footer-social">
           <?php futureco_display_social_links(); ?>
@@ -29,7 +32,7 @@
 
       <!-- Services Links -->
       <div class="footer-links">
-        <h3><?php echo function_exists('pll__') ? pll__('Serviços') : __('Serviços', 'futureco'); ?></h3>
+        <h3><?= pll__('Serviços'); ?></h3>
         <?php
         wp_nav_menu(array(
             'menu'           => futureco_get_menu_name('Serviços'),
@@ -43,7 +46,7 @@
 
       <!-- Company Links -->
       <div class="footer-links">
-        <h3><?php echo function_exists('pll__') ? pll__('Empresa') : __('Empresa', 'futureco'); ?></h3>
+        <h3><?= pll__('Empresa'); ?></h3>
         <?php
         wp_nav_menu(array(
             'menu'           => futureco_get_menu_name('Empresa'),
@@ -57,7 +60,7 @@
 
       <!-- Support Links -->
       <div class="footer-links">
-        <h3><?php echo function_exists('pll__') ? pll__('Suporte') : __('Suporte', 'futureco'); ?></h3>
+        <h3><?= pll__('Suporte'); ?></h3>
         <?php
         wp_nav_menu(array(
             'menu'           => futureco_get_menu_name('Suporte'),
@@ -71,11 +74,13 @@
 
       <!-- Newsletter -->
       <div class="footer-newsletter">
-        <h3><?php echo function_exists('pll__') ? pll__('Newsletter') : __('Newsletter', 'futureco'); ?></h3>
-        <p><?php echo function_exists('pll__') ? pll__('Receba dicas e novidades sobre marketing digital.') : __('Receba dicas e novidades sobre marketing digital.', 'futureco'); ?></p>
+        <h3><?= pll__('Newsletter'); ?></h3>
+        <p>
+          <?= pll__('Receba dicas e novidades sobre marketing digital.'); ?>
+        </p>
         <form class="newsletter-form" id="newsletter-form">
-          <input type="email" name="email" placeholder="<?php echo function_exists('pll_esc_attr') ? pll_esc_attr('Seu email') : esc_attr__('Seu email', 'futureco'); ?>" required>
-          <button type="submit"><?php echo function_exists('pll__') ? pll__('Enviar') : __('Enviar', 'futureco'); ?></button>
+          <input type="email" name="email" placeholder="<?= pll__('Seu email'); ?>" required>
+          <button type="submit"><?= pll__('Enviar'); ?></button>
         </form>
         <div class="footer-badges">
           <img src="<?php echo futureco_image('selo-google.png'); ?>" alt="Google Badge" class="badge-google">
@@ -88,10 +93,12 @@
   <!-- Bottom Bar -->
   <div class="container">
     <div class="footer-bottom">
-      <p><?php printf(function_exists('pll__') ? pll__('&copy; %s Future CO - Todos os direitos reservados') : __('&copy; %s Future CO - Todos os direitos reservados', 'futureco'), date('Y')); ?></p>
+      <p>
+        <?= sprintf(pll__('&copy; %s Future CO - Todos os direitos reservados'), date('Y')); ?>
+      </p>
       <div class="footer-bottom-links">
-        <a href="#"><?php echo function_exists('pll__') ? pll__('Política de Privacidade') : __('Política de Privacidade', 'futureco'); ?></a>
-        <a href="#"><?php echo function_exists('pll__') ? pll__('Termos de Uso') : __('Termos de Uso', 'futureco'); ?></a>
+        <a href="#"><?= pll__('Política de Privacidade'); ?></a>
+        <a href="#"><?= pll__('Termos de Uso'); ?></a>
       </div>
     </div>
   </div>

@@ -5,9 +5,9 @@
  */
 
 $blog_group = get_field('blog_sections');
-$label_sessao = $blog_group['label_sessao'] ?? 'NOSSO CONTEÚDO';
-$titulo = $blog_group['titulo'] ?? 'Últimas do <span class="text-gradient">Blog</span>';
-$descricao = $blog_group['descricao'] ?? 'Acesse nossos conteúdos exclusivos sobre marketing, performance e tecnologia.';
+$label_sessao = $blog_group['label_sessao'] ?? '';
+$titulo = $blog_group['titulo'] ?? '';
+$descricao = $blog_group['descricao'] ?? '';
 
 $args = array(
     'post_type'      => 'post',
@@ -70,6 +70,10 @@ if (get_field('ativar') !== false) :
         </div>
       </article>
       <?php endwhile; wp_reset_postdata(); endif; ?>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="<?php echo esc_url(home_url('/blog')); ?>" class="btn-primary"><?= pll__('Ver Mais'); ?></a>
     </div>
   </div>
 </section>

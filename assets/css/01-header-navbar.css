@@ -42,8 +42,6 @@
 
 	/* visual sticky (mantém identidade) */
 	background: rgba(57, 73, 106, 0.95);
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 	border-bottom: 1px solid var(--border-color);
 }
@@ -58,9 +56,6 @@
 /* Shrink no secundário (efeito “compacto”) */
 .site-header--secondary .header-inner {
 	height: 4rem;
-}
-.site-header--secondary .logo img {
-	height: 2rem;
 }
 
 /* ============================================
@@ -85,7 +80,7 @@
 }
 
 .site-header .logo img {
-	height: 2.5rem;
+	max-height: 50px;
 	width: auto;
 	transition:
 		transform 0.3s ease,
@@ -200,14 +195,18 @@
 	width: 100%;
 	height: 100vh;
 	background: rgba(57, 73, 106, 0.98); /* FutureCO Blue with transparency */
-	backdrop-filter: blur(16px);
-	-webkit-backdrop-filter: blur(16px);
 	z-index: 100;
 	display: flex;
 	flex-direction: column;
 	opacity: 0;
 	visibility: hidden;
-	transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition:
+		background-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+		color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+		border-color 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+		opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+		transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+		box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 	pointer-events: none;
 }
 
@@ -283,7 +282,13 @@
 	padding: 0.875rem 0;
 	border-bottom: none; /* No borders as per image */
 	text-decoration: none;
-	transition: all 0.3s ease;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease,
+		border-color 0.3s ease,
+		opacity 0.3s ease,
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
 }
 
 .mobile-menu nav a:not(.btn-primary):hover {
@@ -449,7 +454,13 @@
 
 .theme-switcher__icon {
 	flex-shrink: 0;
-	transition: all 0.3s ease;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease,
+		border-color 0.3s ease,
+		opacity 0.3s ease,
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
 }
 
 .theme-switcher__icon--moon {

@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	 * @param {'dark'|'light'} theme
 	 */
 	const applyTheme = (theme) => {
+		// Adiciona transição suave apenas no momento do toggle
+		document.body.classList.add("theme-transition");
+		setTimeout(() => {
+			document.body.classList.remove("theme-transition");
+		}, 400);
+
 		if (theme === "dark") {
 			document.body.setAttribute("data-theme", "dark");
 		} else {

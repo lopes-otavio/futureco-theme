@@ -49,7 +49,7 @@ $posts_page_url = $posts_page_id ? get_permalink($posts_page_id) : home_url('/bl
     <?php if ($query->have_posts()) : ?>
     <div class="search-results-grid">
       <?php while ($query->have_posts()) : $query->the_post(); ?>
-      <article class="post-card">
+      <article class="post-card glass-card">
         <div class="post-card-thumb">
           <a href="<?php the_permalink(); ?>">
             <?php $destaque = get_field('imagem_destaque'); ?>
@@ -99,7 +99,7 @@ $posts_page_url = $posts_page_id ? get_permalink($posts_page_id) : home_url('/bl
     </div>
 
     <?php else : ?>
-    <div style="text-align:center;padding:4rem 0;">
+    <div class="text-center py-16">
       <h3 style="font-size:1.5rem;color:#fff;margin-bottom:1rem;">Nenhum post encontrado.</h3>
       <p style="color:rgba(255,255,255,0.6);">Tente buscar por outro termo.</p>
     </div>

@@ -4,8 +4,9 @@
 .contact-section {
 	position: relative;
 	overflow: hidden;
-	background: #fff;
+	background: #39496a;
 }
+
 .contact-grid {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -27,7 +28,8 @@
 .contact-info-icon {
 	width: 3rem;
 	height: 3rem;
-	background: rgba(57, 73, 106, 0.1);
+	background: #fff;
+	border: 1px solid #39496a;
 	border-radius: 0.5rem;
 	display: flex;
 	align-items: center;
@@ -40,11 +42,11 @@
 	color: #39496a;
 }
 .contact-info-item .label {
-	color: rgba(57, 73, 106, 0.6);
+	color: rgba(255, 255, 255, 0.6);
 	font-size: 0.875rem;
 }
 .contact-info-item .value {
-	color: #39496a;
+	color: #fff;
 	font-weight: 600;
 }
 .contact-info-item a.value:hover {
@@ -54,7 +56,7 @@
 	margin-top: 2.5rem;
 }
 .social-links .label {
-	color: rgba(57, 73, 106, 0.6);
+	color: rgba(255, 255, 255, 0.6);
 	font-size: 0.875rem;
 	margin-bottom: 1rem;
 }
@@ -65,15 +67,15 @@
 .social-link {
 	width: 2.5rem;
 	height: 2.5rem;
-	background: rgba(57, 73, 106, 0.1);
+	background: #fff;
+	border: 1px solid #39496a;
 	border-radius: 0.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: all 0.3s ease;
+	transition: 0.3s ease;
 }
 .social-link:hover {
-	background: #39496a;
 	transform: scale(1.1);
 }
 .social-link svg {
@@ -82,20 +84,15 @@
 	color: #39496a;
 	transition: color 0.3s ease;
 }
-.social-link:hover svg {
-	color: #fff;
-}
 .social-link img {
 	max-width: 25px;
 	transition: filter 0.3s ease;
 }
-.social-link:hover img {
-	filter: brightness(0) invert(1);
-}
 .contact-form {
-	background: #39496a;
+	background: #f3f4f6;
 	border-radius: 1rem;
 	padding: 2rem;
+	border: 1px solid #39496a;
 }
 @media (min-width: 768px) {
 	.contact-form {
@@ -117,7 +114,7 @@
 
 .form-group label {
 	display: block;
-	color: rgba(255, 255, 255, 0.8);
+	color: #39496a;
 	font-size: 0.875rem;
 	font-weight: 500;
 	margin-bottom: 0.5rem;
@@ -134,7 +131,7 @@
 }
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-	color: rgba(255, 255, 255, 0.4);
+	color: #485672;
 }
 .form-group input:focus,
 .form-group textarea:focus {
@@ -150,9 +147,17 @@
 }
 .form-submit .btn-primary {
 	width: 100%;
+	border: 1px solid #39496a;
 }
 .form-group {
 	position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+	background: #fff;
+	border: 1px solid #39496a;
+	color: #39496a;
 }
 
 .error-message {
@@ -184,7 +189,7 @@
 	min-height: 1.25rem; /* Reserve space */
 	visibility: hidden;
 	opacity: 0;
-	transition: all 0.3s ease;
+	transition: 0.3s ease;
 	text-align: center;
 	border-radius: 0.5rem;
 	padding: 0.5rem;

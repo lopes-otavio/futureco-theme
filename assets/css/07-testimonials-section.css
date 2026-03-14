@@ -126,7 +126,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	transition: all 0.3s ease;
+	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 	color: #fff;
 }
 .carousel-btn:hover {
@@ -142,7 +142,7 @@
 	height: 0.5rem;
 	border-radius: 9999px;
 	background: rgba(255, 255, 255, 0.3);
-	transition: all 0.3s ease;
+	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 	cursor: pointer;
 	border: none;
 }

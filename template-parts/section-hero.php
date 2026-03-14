@@ -10,12 +10,14 @@ $titulo = $hero['titulo'] ?? '';
 $label_sessao = $hero['label_sessao'] ?? '';
 $descricao = $hero['descricao'] ?? '';
 $background = $hero['background'] ?? '';
+$background_dark = $hero['background_dark'] ?? '';
 
-if (get_field('ativar') !== false) :
+if (($hero['ativar'] ?? true) !== false) :
 ?>
 <section class="hero-section" id="hero">
   <!-- Background -->
-  <div class="hero-bg" style="background-image:url('<?php echo esc_url($background); ?>');">
+  <div class="hero-bg"
+    style="--bg-light: url('<?php echo esc_url($background); ?>'); --bg-dark: url('<?php echo esc_url($background_dark ?: $background); ?>');">
   </div>
   <div class="hero-overlay"></div>
 
@@ -33,17 +35,17 @@ if (get_field('ativar') !== false) :
       </div>
 
       <!-- Title -->
-      <h1 class="hero-title scroll-animate delay-100">
+      <h1 class="hero-title scroll-animate">
         <?php echo $titulo; ?>
       </h1>
 
       <!-- Subtitle -->
-      <p class="hero-subtitle scroll-animate delay-200">
+      <p class="hero-subtitle scroll-animate">
         <?php echo esc_html($descricao); ?>
       </p>
 
       <!-- Buttons -->
-      <div class="hero-buttons scroll-animate delay-300">
+      <div class="hero-buttons scroll-animate">
         <a href="#contato" class="btn-primary">
           <?= pll__('Comece Agora'); ?>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

@@ -10,17 +10,17 @@ $label_sessao = $equipe_group['label_sessao'] ?? '';
 $titulo = $equipe_group['titulo'] ?? '';
 $equipe = $equipe_group['equipe'] ?? array();
 
-if (get_field('ativar') !== false) :
+if (($equipe_group['ativar'] ?? true) !== false) :
 ?>
 <section class="team-section section-padding" id="equipe">
   <!-- <div class="decorative-bg"></div> -->
   <div class="decorative-blob"></div>
-  <div class="container" style="position:relative;z-index:1;">
+  <div class="container section-container">
     <!-- Header -->
     <div class="team-header">
       <div>
-        <p class="section-label" style="color:rgba(255,255,255,0.5);"><?php echo esc_html($label_sessao); ?></p>
-        <h2 class="section-title" style="color:#fff;">
+        <p class="section-label"><?php echo esc_html($label_sessao); ?></p>
+        <h2 class="section-title">
           <?php echo $titulo; ?>
         </h2>
       </div>

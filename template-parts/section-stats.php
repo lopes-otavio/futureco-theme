@@ -8,13 +8,14 @@
 $stats_group = get_field('numeros_section');
 $numeros = $stats_group['numeros'] ?? array();
 $background = $stats_group['background'] ?? '';
+$background_dark = $stats_group['background_dark'] ?? '';
 
-if (get_field('ativar') !== false) :
+if (($stats_group['ativar'] ?? true) !== false) :
 ?>
 <section class="stats-section" id="numeros"
-  style="<?php if ($background) : ?>background-image:url('<?php echo esc_url($background); ?>');<?php endif; ?>background-size:cover;background-position:center;">
+  style="--bg-light: url('<?php echo esc_url($background); ?>'); --bg-dark: url('<?php echo esc_url($background_dark ?: $background); ?>'); background-image: var(--bg-light); background-size: cover; background-position: center;">
   <div class="stats-overlay"></div>
-  <div class="container" style="position:relative;z-index:1;">
+  <div class="container section-container">
     <div class="stats-grid">
       <?php if ($numeros) : foreach ($numeros as $index => $item) : 
           $delay = $index * 100;

@@ -10,17 +10,17 @@ $titulo = $cases_group['titulo'] ?? 'Cases de <span class="text-gradient">Sucess
 $descricao = $cases_group['descricao'] ?? 'Não são apenas clientes. São histórias que valorizamos profundamente.';
 $cases = $cases_group['cases'] ?? array();
 
-if (get_field('ativar') !== false) :
+if (($cases_group['ativar'] ?? true) !== false) :
 ?>
 <section class="cases-section section-padding" id="cases">
   <div class="container">
     <!-- Section Header -->
     <div class="section-header">
-      <p class="section-label" style="color:rgba(255,255,255,0.5);"><?php echo esc_html($label_sessao); ?></p>
-      <h2 class="section-title" style="color:#fff;">
+      <p class="section-label"><?php echo esc_html($label_sessao); ?></p>
+      <h2 class="section-title">
         <?php echo $titulo; ?>
       </h2>
-      <p class="section-description" style="color:rgba(255,255,255,0.6);">
+      <p class="section-description">
         <?php echo esc_html($descricao); ?>
       </p>
     </div>
@@ -59,8 +59,8 @@ if (get_field('ativar') !== false) :
       <?php endforeach; endif; ?>
     </div>
 
-    <div style="text-align:center;margin-top:2.5rem;">
-      <a href="<?php echo esc_url(home_url('/cases')); ?>" class="btn-primary"><?= pll__('Ver Mais'); ?></a>
+    <div class="text-center mt-10">
+      <a href="<?php echo esc_url(home_url('/cases')); ?>" class="btn-primary dark"><?= pll__('Ver Mais'); ?></a>
     </div>
   </div>
 </section>

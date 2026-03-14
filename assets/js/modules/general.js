@@ -1,36 +1,37 @@
-/**
- * General Module
- * Handles: Smooth scroll for anchor links, Global initializations
- */
 document.addEventListener("DOMContentLoaded", function () {
 	/* ============================================
-     SMOOTH SCROLL FOR ANCHOR LINKS
+     SMOOTH SCROLL FOR ANCHOR LINKS (Delegation)
      ============================================ */
-	const header = document.getElementById("site-header"); // Needed for offset calculation
+	document.body.addEventListener("click", function (e) {
+		const anchor = e.target.closest('a[href^="#"]');
+		if (!anchor) return;
 
-	document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-		anchor.addEventListener("click", function (e) {
-			const targetId = this.getAttribute("href");
-			if (targetId === "#") return;
+		const targetId = anchor.getAttribute("href");
+		if (targetId === "#") return;
 
-			// Handle simple fragment identifiers if they exist on the page
-			try {
-				const target = document.querySelector(targetId);
-				if (target) {
-					e.preventDefault();
-					const headerHeight = header ? header.offsetHeight : 0;
-					const targetPosition =
-						target.getBoundingClientRect().top +
-						window.pageYOffset -
-						headerHeight;
-					window.scrollTo({
-						top: targetPosition,
-						behavior: "smooth",
-					});
-				}
-			} catch (err) {
-				// Ignore invalid selectors
+		try {
+			const target = document.querySelector(targetId);
+			if (target) {
+				e.preventDefault();
+
+				// Find active visible header for offset calculation
+				const activeHeader = document.querySelector(
+					'.site-header:not([style*="display: none"])',
+				);
+				const headerHeight = activeHeader ? activeHeader.offsetHeight : 0;
+
+				const targetPosition =
+					target.getBoundingClientRect().top +
+					window.pageYOffset -
+					headerHeight;
+
+				window.scrollTo({
+					top: targetPosition,
+					behavior: "smooth",
+				});
 			}
-		});
+		} catch (err) {
+			// Ignore invalid selectors
+		}
 	});
 });

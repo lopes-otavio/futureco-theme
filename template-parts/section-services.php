@@ -11,18 +11,18 @@ $titulo = $servicos_group['titulo'] ?? '';
 $descricao = $servicos_group['descricao'] ?? '';
 $cards = $servicos_group['cards'] ?? array();
 
-if (get_field('ativar') !== false) :
+if (($servicos_group['ativar'] ?? true) !== false) :
 ?>
 <section class="services-section section-padding" id="servicos">
   <div class="decorative-gradient"></div>
-  <div class="container" style="position:relative;z-index:1;">
+  <div class="container section-container">
     <!-- Section Header -->
     <div class="section-header">
-      <p class="section-label" style="color:rgba(255,255,255,0.5);"><?= $label_sessao; ?></p>
-      <h2 class="section-title" style="color:#fff;">
+      <p class="section-label"><?= $label_sessao; ?></p>
+      <h2 class="section-title">
         <?= $titulo; ?>
       </h2>
-      <p class="section-description" style="color:rgba(255,255,255,0.6);">
+      <p class="section-description dark">
         <?= $descricao; ?>
       </p>
     </div>
@@ -35,13 +35,13 @@ if (get_field('ativar') !== false) :
       <div class="service-card glass-card scroll-animate <?php echo $delay ? 'delay-' . $delay : ''; ?>">
         <div class="service-icon">
           <img src="<?php echo esc_url($card['icon']); ?>" alt="<?php echo esc_attr($card['card_title']); ?>"
-            class="icon-white">
+            class="icon-white-on-dark">
         </div>
         <h3><?php echo esc_html($card['card_title']); ?></h3>
         <p><?php echo esc_html($card['card_desc']); ?></p>
         <a href="#" class="service-link">
           <?= pll__('Saiba mais'); ?>
-          <img src="<?php echo futureco_icon('arrow-top-right.svg'); ?>" alt="" class="icon-white">
+          <img src="<?php echo futureco_icon('arrow-top-right.svg'); ?>" alt="" class="icon-white-on-dark">
         </a>
       </div>
       <?php endforeach; endif; ?>

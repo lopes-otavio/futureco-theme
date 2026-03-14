@@ -65,4 +65,32 @@ document.addEventListener("DOMContentLoaded", function () {
 			counterObserver.observe(el);
 		});
 	}
+
+	/* ============================================
+     PARTNERS CAROUSEL ANIMATION
+     ============================================ */
+	const partnersTrack = document.querySelector(".partners-track");
+	if (partnersTrack && "IntersectionObserver" in window) {
+		// Checks reduced motion preference before observing
+		const prefersReducedMotion = window.matchMedia(
+			"(prefers-reduced-motion: reduce)",
+		).matches;
+
+		if (!prefersReducedMotion) {
+			const partnersObserver = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							partnersTrack.style.animationPlayState = "running";
+						} else {
+							partnersTrack.style.animationPlayState = "paused";
+						}
+					});
+				},
+				{ threshold: 0.1 },
+			);
+
+			partnersObserver.observe(partnersTrack.parentElement);
+		}
+	}
 });

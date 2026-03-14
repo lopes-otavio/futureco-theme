@@ -5,27 +5,32 @@
  */
 
 
-$contacts = new WP_Query(array(
-            'post_type'      => 'contact',
-            'posts_per_page' => -1,
-            'status'         => 'publish',
-            'order'          => 'ASC'
-        ));
+$contacts = get_transient('futureco_contacts_query');
+if (false === $contacts) {
+    $contacts = new WP_Query(array(
+        'post_type'      => 'contact',
+        'posts_per_page' => -1,
+        'status'         => 'publish',
+        'order'          => 'ASC',
+        'no_found_rows'  => true,
+    ));
+    set_transient('futureco_contacts_query', $contacts, 12 * HOUR_IN_SECONDS);
+}
 ?>
 <?php
 $contato_group = get_field('contato_section');
 $label_sessao = $contato_group['label_sessao'] ?? '';
 $titulo = $contato_group['titulo'] ?? '';
 
-if (get_field('ativar') !== false) :
+if (($contato_group['ativar'] ?? true) !== false) :
 ?>
 <section class="contact-section section-padding" id="contato">
   <!-- <div class="decorative-bg"></div> -->
   <div class="container">
     <!-- Section Header -->
     <div class="section-header">
-      <p class="section-label" style="color:rgba(57,73,106,0.5);"><?php echo esc_html($label_sessao); ?></p>
-      <h2 class="section-title" style="color:#39496A;">
+      <p class="section-label text-dark-label"><?php echo esc_html($label_sessao); ?></p>
+      <h2 class="section-title">
         <?php echo $titulo; ?>
       </h2>
     </div>
@@ -120,11 +125,13 @@ if (get_field('ativar') !== false) :
           </div>
 
           <!-- reCAPTCHA Widget -->
+          <!--
           <div class="form-group recaptcha-wrapper">
             <div class="g-recaptcha"
               data-sitekey="<?= defined('FUTURECO_RECAPTCHA_SITE_KEY') ? FUTURECO_RECAPTCHA_SITE_KEY : ''; ?>"></div>
             <span class="error-message" id="recaptcha-error"></span>
           </div>
+          -->
 
           <div class="form-submit">
             <button type="submit" class="btn-primary">

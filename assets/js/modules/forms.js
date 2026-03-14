@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 
 			// Validate reCAPTCHA
+			/*
 			const recaptchaResponse = contactForm.querySelector(
 				'[name="g-recaptcha-response"]',
 			);
@@ -108,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
 						"Por favor, confirme que você não é um robô.";
 				hasError = true;
 			}
+			*/
 
 			if (hasError) return;
 
@@ -125,6 +127,9 @@ document.addEventListener("DOMContentLoaded", function () {
 				body: formData,
 			})
 				.then(function (response) {
+					if (!response.ok) {
+						throw new Error("Erro de rede: " + response.status);
+					}
 					return response.json();
 				})
 				.then(function (data) {
@@ -170,6 +175,22 @@ document.addEventListener("DOMContentLoaded", function () {
 		newsletterForm.addEventListener("submit", function (e) {
 			e.preventDefault();
 
+			let feedback = document.getElementById("newsletter-feedback");
+			if (!feedback) {
+				feedback = document.createElement("div");
+				feedback.id = "newsletter-feedback";
+				feedback.className = "form-feedback";
+				feedback.setAttribute("aria-live", "polite");
+				feedback.style.marginTop = "1rem";
+				newsletterForm.appendChild(feedback);
+			}
+
+			feedback.classList.remove("is-success", "is-error");
+			feedback.textContent = "";
+
+			const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+			if (submitBtn) submitBtn.disabled = true;
+
 			const formData = new FormData(newsletterForm);
 			formData.append("action", "futureco_newsletter");
 			formData.append("nonce", futurecoData.nonce);
@@ -179,18 +200,28 @@ document.addEventListener("DOMContentLoaded", function () {
 				body: formData,
 			})
 				.then(function (response) {
+					if (!response.ok) {
+						throw new Error("Erro de rede: " + response.status);
+					}
 					return response.json();
 				})
 				.then(function (data) {
 					if (data.success) {
-						alert("Inscrito com sucesso na newsletter!");
+						feedback.textContent = "Inscrito com sucesso na newsletter!";
+						feedback.classList.add("is-success");
 						newsletterForm.reset();
 					} else {
-						alert(data.data || "Erro ao inscrever. Tente novamente.");
+						feedback.textContent =
+							data.data || "Erro ao inscrever. Tente novamente.";
+						feedback.classList.add("is-error");
 					}
 				})
 				.catch(function () {
-					alert("Erro de conexão. Tente novamente.");
+					feedback.textContent = "Erro de conexão. Tente novamente.";
+					feedback.classList.add("is-error");
+				})
+				.finally(function () {
+					if (submitBtn) submitBtn.disabled = false;
 				});
 		});
 	}

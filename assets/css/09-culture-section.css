@@ -4,8 +4,9 @@
 .culture-section {
 	position: relative;
 	overflow: hidden;
-	background: #f9fafb;
+	background: #2a3650;
 }
+
 .culture-section .decorative-bg {
 	position: absolute;
 	top: 0;
@@ -42,15 +43,15 @@
 	}
 }
 .culture-content .section-label {
-	color: rgba(57, 73, 106, 0.6);
+	color: #f3f4f6;
 	text-align: left;
 }
 .culture-content .section-title {
-	color: #39496a;
+	color: #f3f4f6;
 	text-align: left;
 }
 .culture-content .section-description {
-	color: rgba(57, 73, 106, 0.7);
+	color: #f3f4f6;
 	text-align: left;
 	margin: 0 0 2rem;
 }
@@ -63,7 +64,8 @@
 	font-weight: 600;
 	padding: 1rem 2rem;
 	border-radius: 9999px;
-	transition: all 0.3s ease;
+	border: 1px solid #f3f4f6;
+	transition: 0.3s ease;
 }
 .culture-cta:hover {
 	background: #2a3650;
@@ -86,7 +88,13 @@
 	padding: 1.5rem;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 	border: 1px solid #f3f4f6;
-	transition: all 0.3s ease;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease,
+		border-color 0.3s ease,
+		opacity 0.3s ease,
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
 }
 .value-card:hover {
 	transform: translateY(-4px);
@@ -102,7 +110,13 @@
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 1rem;
-	transition: all 0.3s ease;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease,
+		border-color 0.3s ease,
+		opacity 0.3s ease,
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
 }
 .value-card:hover .value-icon {
 	transform: scale(1.1);

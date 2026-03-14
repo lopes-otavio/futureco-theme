@@ -4,7 +4,11 @@
 .team-section {
 	position: relative;
 	overflow: hidden;
-	background: #39496a;
+	background: #edeff2;
+}
+
+.team-section .section-title {
+	color: #39496a;
 }
 
 .team-header {
@@ -33,10 +37,11 @@
 	align-items: center;
 	justify-content: center;
 	transition: all 0.3s ease;
-	color: #fff;
+	color: #39496a;
+	border: 1px solid #39496a;
 }
 .team-nav-btn:hover {
-	background: rgba(255, 255, 255, 0.2);
+	transform: scale(1.1);
 }
 .team-nav-btn:disabled {
 	opacity: 0.3;
@@ -125,7 +130,6 @@
 	width: 2.5rem;
 	height: 2.5rem;
 	background: rgba(255, 255, 255, 0.2);
-	backdrop-filter: blur(4px);
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -162,7 +166,6 @@
 	gap: 0.5rem;
 	margin-top: 0.5rem;
 	background: rgba(57, 73, 106, 0.8);
-	backdrop-filter: blur(4px);
 	border-radius: 9999px;
 	padding: 0.25rem 1rem;
 }
@@ -180,7 +183,6 @@
 .team-card-back {
 	background: #fff;
 	transform: rotateY(180deg);
-	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 .team-card-back .back-content {
 	height: 100%;

@@ -1,0 +1,15 @@
+{
+	"name": "futureco-theme",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"build": "gulp build",
+		"watch": "gulp watch"
+	},
+	"devDependencies": {
+		"gulp": "^4.0.2",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-cssimport": "^7.0.0",
+		"gulp-rename": "^2.0.0"
+	}
+}

@@ -10,16 +10,16 @@ $label_sessao = $testemunhas_group['label_sessao'] ?? '';
 $titulo = $testemunhas_group['titulo'] ?? '';
 $testemunhas = $testemunhas_group['testemunhas'] ?? array();
 
-if (get_field('ativar') !== false) :
+if (($testemunhas_group['ativar'] ?? true) !== false) :
 ?>
 <section class="testimonials-section section-padding" id="depoimentos">
   <div class="decorative-1"></div>
   <div class="decorative-2"></div>
-  <div class="container" style="position:relative;z-index:1;">
+  <div class="container section-container">
     <!-- Section Header -->
     <div class="section-header">
-      <p class="section-label" style="color:rgba(255,255,255,0.5);"><?php echo esc_html($label_sessao); ?></p>
-      <h2 class="section-title" style="color:#fff;">
+      <p class="section-label"><?php echo esc_html($label_sessao); ?></p>
+      <h2 class="section-title">
         <?php echo $titulo; ?>
       </h2>
     </div>

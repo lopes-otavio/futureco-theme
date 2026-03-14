@@ -4,7 +4,7 @@
  * @package FutureCO
  */
 
-$blog_group = get_field('blog_sections');
+$blog_group = get_field('blog_section');
 $label_sessao = $blog_group['label_sessao'] ?? '';
 $titulo = $blog_group['titulo'] ?? '';
 $descricao = $blog_group['descricao'] ?? '';
@@ -17,17 +17,17 @@ $args = array(
 
 $blog_query = new WP_Query($args);
 
-if (get_field('ativar') !== false) :
+if (($blog_group['ativar'] ?? true) !== false) :
 ?>
 <section class="blog-section section-padding" id="blog">
   <div class="container">
     <!-- Section Header -->
     <div class="section-header">
-      <p class="section-label" style="color:rgba(255,255,255,0.5);"><?php echo esc_html($label_sessao); ?></p>
-      <h2 class="section-title" style="color:#fff;">
+      <p class="section-label"><?php echo esc_html($label_sessao); ?></p>
+      <h2 class="section-title text-gradient-dark">
         <?php echo $titulo; ?>
       </h2>
-      <p class="section-description" style="color:rgba(255,255,255,0.6);">
+      <p class="section-description">
         <?php echo esc_html($descricao); ?>
       </p>
     </div>
@@ -72,8 +72,8 @@ if (get_field('ativar') !== false) :
       <?php endwhile; wp_reset_postdata(); endif; ?>
     </div>
 
-    <div style="text-align:center;margin-top:2.5rem;">
-      <a href="<?php echo esc_url(home_url('/blog')); ?>" class="btn-primary"><?= pll__('Ver Mais'); ?></a>
+    <div class="text-center mt-10">
+      <a href="<?php echo esc_url(home_url('/blog')); ?>" class="btn-primary dark"><?= pll__('Ver Mais'); ?></a>
     </div>
   </div>
 </section>

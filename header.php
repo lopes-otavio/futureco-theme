@@ -28,6 +28,15 @@
 </head>
 
 <body <?php body_class(); ?>>
+  <script>
+  (function() {
+    var saved = localStorage.getItem('futureco-theme');
+    if (saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)')
+        .matches)) {
+      document.body.setAttribute('data-theme', 'dark');
+    }
+  })();
+  </script>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7FKT3L9" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
@@ -40,9 +49,9 @@
     <div class="container">
       <div class="header-inner">
         <!-- Logo -->
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
-          <img src="<?php echo futureco_icon('logo-triangulo.png'); ?>" alt="<?php bloginfo('name'); ?>">
-          <span class="logo-text">Future co</span>
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="logo icon-white">
+          <img src="<?php echo futureco_icon('logo_future_colorido.png'); ?>" alt="<?php bloginfo('name'); ?>">
+          <!-- <span class="logo-text">Future co</span> -->
         </a>
 
         <!-- Desktop Navigation -->
@@ -138,9 +147,9 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" data-menu>
       <div class="mobile-menu__header">
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
-          <img src="<?php echo futureco_icon('logo-triangulo.png'); ?>" alt="<?php bloginfo('name'); ?>">
-          <span class="logo-text">Future co</span>
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="logo icon-white">
+          <img src="<?php echo futureco_icon('logo_future_colorido.png'); ?>" alt="<?php bloginfo('name'); ?>">
+          <!-- <span class="logo-text">Future co</span> -->
         </a>
         <button class="mobile-menu-close" type="button" aria-label="<?= pll__('Fechar menu') ?>">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

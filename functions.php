@@ -51,7 +51,7 @@ function futureco_scripts() {
     // Main Stylesheet
     wp_enqueue_style(
         'futureco-main',
-        FUTURECO_URI . '/assets/css/main.css',
+        FUTURECO_URI . '/dist/main.min.css',
         array('google-fonts-inter'),
         FUTURECO_VERSION
     );
@@ -62,6 +62,20 @@ function futureco_scripts() {
         get_stylesheet_uri(),
         array('futureco-main'),
         FUTURECO_VERSION
+    );
+
+    // Owl Carousel Styles
+    wp_enqueue_style(
+        'owl-carousel',
+        'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css',
+        array(),
+        '2.3.4'
+    );
+    wp_enqueue_style(
+        'owl-carousel-theme',
+        'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css',
+        array(),
+        '2.3.4'
     );
 
     // Modulos JavaScript
@@ -76,11 +90,21 @@ function futureco_scripts() {
         'futureco-theme-switcher'  => '/assets/js/modules/theme-switcher.js',
     );
 
+    // Owl Carousel Script
+    wp_enqueue_script(
+        'owl-carousel-js',
+        'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js',
+        array('jquery'),
+        '2.3.4',
+        true
+    );
+
+    // Init Theme Scripts
     foreach ($modules as $handle => $path) {
         wp_enqueue_script(
             $handle,
             FUTURECO_URI . $path,
-            array(),
+            array('jquery', 'owl-carousel-js'), // add dependencies
             FUTURECO_VERSION,
             true
         );
@@ -128,6 +152,7 @@ function futureco_contact_form_handler() {
     }
 
     // Verify reCAPTCHA
+    /*
     $recaptcha_response = sanitize_text_field($_POST['g-recaptcha-response'] ?? '');
     if (empty($recaptcha_response)) {
         wp_send_json_error('Por favor, confirme que você não é um robô.');
@@ -146,6 +171,7 @@ function futureco_contact_form_handler() {
     if (empty($verify_result->success) || !$verify_result->success) {
         wp_send_json_error('Falha na verificação de segurança (reCAPTCHA). Tente novamente.');
     }
+    */
 
     // Send email
     $to = get_option('admin_email');
@@ -226,12 +252,17 @@ if (!current_user_can('administrator')) {
  * Helper: Display Social Links from CPT
  */
 function futureco_display_social_links($link_class = '') {
-    $socials = new WP_Query(array(
-        'post_type'      => 'socials',
-        'posts_per_page' => -1,
-        'status'         => 'publish',
-        'order'          => 'ASC'
-    ));
+    $socials = get_transient('futureco_socials_query');
+    if (false === $socials) {
+        $socials = new WP_Query(array(
+            'post_type'      => 'socials',
+            'posts_per_page' => -1,
+            'status'         => 'publish',
+            'order'          => 'ASC',
+            'no_found_rows'  => true,
+        ));
+        set_transient('futureco_socials_query', $socials, 12 * HOUR_IN_SECONDS);
+    }
 
     if ($socials->have_posts()) {
         while ($socials->have_posts()) {

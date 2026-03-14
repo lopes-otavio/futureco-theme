@@ -4,7 +4,7 @@
 .services-section {
 	position: relative;
 	overflow: hidden;
-	background: #39496a;
+	background: #edeff2;
 }
 .services-section .decorative-gradient {
 	position: absolute;
@@ -32,12 +32,13 @@
 .service-card {
 	padding: 2rem;
 	height: 100%;
-	transition: all 0.5s ease;
+	transition: 0.3s ease;
+	border: solid 1px #39496a;
+	box-shadow: 5px 5px 15px -8px #000000;
 }
 .service-card:hover {
 	transform: translateY(-0.5rem);
 	background: rgba(255, 255, 255, 0.1);
-	box-shadow: 0 20px 40px rgba(255, 255, 255, 0.05);
 }
 .service-icon {
 	width: 3.5rem;
@@ -49,6 +50,7 @@
 	justify-content: center;
 	margin-bottom: 1.5rem;
 	transition: all 0.3s ease;
+	border: solid 1px #39496a;
 }
 .service-card:hover .service-icon {
 	background: rgba(255, 255, 255, 0.2);
@@ -61,36 +63,30 @@
 .service-card h3 {
 	font-size: 1.25rem;
 	font-weight: 700;
-	color: #fff;
+	color: #39496a;
 	margin-bottom: 0.75rem;
 	transition: all 0.3s ease;
 }
 .service-card:hover h3 {
-	background: linear-gradient(to right, #fff, #9aa7b8);
+	background: linear-gradient(to right, #39496a, #39496a);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 }
 .service-card p {
-	color: rgba(255, 255, 255, 0.6);
+	color: #39496a;
 	line-height: 1.75;
 	transition: color 0.3s ease;
-}
-.service-card:hover p {
-	color: rgba(255, 255, 255, 0.8);
 }
 .service-link {
 	margin-top: 1.5rem;
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-	color: #9aa7b8;
+	color: #39496a;
 	font-size: 0.875rem;
 	font-weight: 500;
 	transition: color 0.3s ease;
-}
-.service-card:hover .service-link {
-	color: #fff;
 }
 .service-link img {
 	width: 1rem;

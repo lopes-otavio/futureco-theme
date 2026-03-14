@@ -11,11 +11,11 @@ $titulo = $cultura_group['titulo'] ?? '';
 $descricao = $cultura_group['descricao'] ?? '';
 $cards = $cultura_group['cards'] ?? array();
 
-if (get_field('ativar') !== false) :
+if (($cultura_group['ativar'] ?? true) !== false) :
 ?>
 <section class="culture-section section-padding" id="sobre">
   <!-- <div class="decorative-bg"></div> -->
-  <div class="container" style="position:relative;z-index:1;">
+  <div class="container section-container">
     <!-- Banner Image -->
     <div class="culture-banner scroll-animate">
       <img src="<?php echo futureco_image('futureco-team.png'); ?>" alt="Equipe Future CO">
@@ -46,7 +46,7 @@ if (get_field('ativar') !== false) :
         <div class="value-card">
           <div class="value-icon">
             <img src="<?php echo esc_url($card['icone']); ?>" alt="<?php echo esc_attr($card['titulo']); ?>"
-              class="icon-white" style="max-width:24px;">
+              class="icon-white-on-dark" style="max-width:24px;">
           </div>
           <h3><?php echo esc_html($card['titulo']); ?></h3>
           <p><?php echo esc_html($card['descricao']); ?></p>

@@ -18,9 +18,9 @@
     <div class="footer-grid">
       <!-- Brand -->
       <div class="footer-brand">
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
-          <img src="<?php echo futureco_icon('logo-triangulo.png'); ?>" alt="Future CO">
-          <span>Future CO</span>
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="logo icon-white">
+          <img src="<?php echo futureco_icon('logo_future_colorido.png'); ?>" alt="Future CO">
+          <!-- <span>Future CO</span> -->
         </a>
         <p class="description">
           <?= pll__('Transformando negócios através de estratégias de marketing digital que geram resultados reais.'); ?>
@@ -96,10 +96,9 @@
       <p>
         <?= sprintf(pll__('&copy; %s Future CO - Todos os direitos reservados'), date('Y')); ?>
       </p>
-      <div class="footer-bottom-links">
-        <a href="#"><?= pll__('Política de Privacidade'); ?></a>
-        <a href="#"><?= pll__('Termos de Uso'); ?></a>
-      </div>
+      <a href="https://lynksistemas.com.br" target="_blank" rel="noopener noreferrer" class="footer-made-by">
+        Made with 💙 by <img src="<?php echo futureco_asset('svg/logo-lynk-branca.svg'); ?>" alt="Lynk">
+      </a>
     </div>
   </div>
 </footer>

@@ -16,17 +16,17 @@ $imagem = $faq_group['imagem'] ?? '';
 $texto_funcionario = $faq_group['texto_funcionario'] ?? '';
 $link_botao = $faq_group['link_botao'] ?? '';
 
-if (get_field('ativar') !== false) :
+if (($faq_group['ativar'] ?? true) !== false) :
 ?>
 <section class="faq-section section-padding" id="faq">
   <div class="container">
     <!-- Header moved to Top -->
     <div class="section-header scroll-animate">
-      <p class="section-label" style="color:rgba(255,255,255,0.5);"><?php echo esc_html($label_sessao); ?></p>
-      <h2 class="section-title" style="color:#fff;">
+      <p class="section-label"><?php echo esc_html($label_sessao); ?></p>
+      <h2 class="section-title">
         <?php echo $titulo; ?>
       </h2>
-      <p class="section-description" style="color:rgba(255,255,255,0.6); margin: 0 auto;">
+      <p class="section-description text-center mx-auto">
         <?php echo esc_html($descricao); ?>
       </p>
     </div>
@@ -63,7 +63,7 @@ if (get_field('ativar') !== false) :
       <div class="faq-list scroll-animate delay-200">
         <?php if ($faqs) : foreach ($faqs as $index => $faq): ?>
         <div class="faq-item" data-faq="<?php echo $index; ?>">
-          <button class="faq-question" onclick="toggleFaq(this)">
+          <button class="faq-question">
             <?php echo esc_html($faq['pergunta']); ?>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">

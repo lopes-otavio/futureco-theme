@@ -3,9 +3,9 @@
     <div class="container">
       <div class="header-inner">
         <!-- Logo -->
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
-          <img src="<?php echo futureco_icon('logo-triangulo.png'); ?>" alt="<?php bloginfo('name'); ?>">
-          <span class="logo-text">Future co</span>
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="logo icon-white">
+          <img src="<?php echo futureco_icon('logo_future_colorido.png'); ?>" alt="<?php bloginfo('name'); ?>">
+          <!-- <span class="logo-text">Future co</span> -->
         </a>
 
         <!-- Desktop Navigation -->
@@ -102,9 +102,9 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" data-menu>
       <div class="mobile-menu__header">
-        <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
-          <img src="<?php echo futureco_icon('logo-triangulo.png'); ?>" alt="<?php bloginfo('name'); ?>">
-          <span class="logo-text">Future co</span>
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="logo icon-white">
+          <img src="<?php echo futureco_icon('logo_future_colorido.png'); ?>" alt="<?php bloginfo('name'); ?>">
+          <!-- <span class="logo-text">Future co</span> -->
         </a>
         <button class="mobile-menu-close" type="button" aria-label="<?= pll__('Fechar menu') ?>">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

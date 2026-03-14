@@ -17,6 +17,7 @@
 .hero-bg {
 	position: absolute;
 	inset: 0;
+	background-image: var(--bg-light);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -55,15 +56,18 @@
 	position: relative;
 	z-index: 10;
 	max-width: 56rem;
-	margin: 0 auto;
 	text-align: center;
+}
+@media (min-width: 1024px) {
+	.hero-content {
+		text-align: start;
+	}
 }
 .hero-badge {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.5rem;
 	background: rgba(255, 255, 255, 0.1);
-	backdrop-filter: blur(4px);
 	border: 1px solid rgba(255, 255, 255, 0.2);
 	border-radius: 9999px;
 	padding: 0.5rem 1rem;
@@ -95,20 +99,22 @@
 }
 @media (min-width: 768px) {
 	.hero-title {
-		font-size: 3.75rem;
-	}
-}
-@media (min-width: 1024px) {
-	.hero-title {
-		font-size: 4.5rem;
+		font-size: 3.5rem;
 	}
 }
 .hero-subtitle {
 	font-size: 1.125rem;
 	color: rgba(255, 255, 255, 0.7);
 	max-width: 42rem;
-	margin: 0 auto 2.5rem;
 	line-height: 1.75;
+	margin-left: auto;
+	margin-right: auto;
+}
+@media (min-width: 1024px) {
+	.hero-subtitle {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
 @media (min-width: 640px) {
 	.hero-subtitle {
@@ -120,7 +126,14 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-top: 2rem;
 	gap: 1rem;
+}
+@media (min-width: 1024px) {
+	.hero-buttons {
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
 }
 @media (min-width: 640px) {
 	.hero-buttons {

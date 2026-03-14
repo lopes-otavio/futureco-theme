@@ -1,0 +1,52 @@
+/* ============================================
+   UTILITY CLASSES (Refactored from inline styles)
+   ============================================ */
+
+.section-container {
+	position: relative;
+	z-index: 1;
+}
+
+.section-label {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.section-title {
+	color: var(--color-white, #fff);
+}
+
+.section-description.dark {
+	color: #39496a;
+}
+
+.section-description.white {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.text-dark-label {
+	color: rgba(57, 73, 106, 0.5) !important;
+}
+
+.text-dark-title {
+	color: #39496a !important;
+}
+
+.text-dark-desc {
+	color: rgba(57, 73, 106, 0.6) !important;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.mx-auto {
+	margin: 0 auto;
+}
+
+.mt-10 {
+	margin-top: 2.5rem;
+}
+
+.py-16 {
+	padding: 4rem 0;
+}

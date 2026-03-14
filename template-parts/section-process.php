@@ -11,15 +11,15 @@ $titulo = $processo_group['titulo'] ?? '';
 $descricao = $processo_group['descricao'] ?? '';
 $cards = $processo_group['cards'] ?? array();
 
-if (get_field('ativar') !== false) :
+if (($processo_group['ativar'] ?? true) !== false) :
 ?>
 <section class="process-section section-padding" id="processo">
   <div class="container">
     <!-- Section Header -->
     <div class="section-header">
-      <p class="section-label" style="color:rgba(57,73,106,0.5);"><?php echo esc_html($label_sessao); ?></p>
-      <h2 class="section-title" style="color:#39496A;"><?php echo $titulo; ?></h2>
-      <p class="section-description" style="color:rgba(57,73,106,0.6);">
+      <p class="section-label text-dark-label"><?php echo esc_html($label_sessao); ?></p>
+      <h2 class="section-title"><?php echo $titulo; ?></h2>
+      <p class="section-description">
         <?php echo $descricao; ?>
       </p>
     </div>
@@ -27,26 +27,27 @@ if (get_field('ativar') !== false) :
     <!-- Process Slider -->
     <div class="process-slider-container">
       <div class="process-grid" id="process-slider">
-      <?php if ($cards) : foreach ($cards as $index => $card) : 
+        <?php if ($cards) : foreach ($cards as $index => $card) : 
           $delay = $index * 200;
           $number = str_pad($index + 1, 2, '0', STR_PAD_LEFT);
       ?>
-      <div class="process-card scroll-animate <?php echo $delay ? 'delay-' . $delay : ''; ?>">
-        <div class="process-number"><span><?php echo $number; ?></span></div>
-        <div class="process-icon">
-          <img src="<?php echo esc_url($card['icone']); ?>" alt="<?php echo esc_attr($card['titulo']); ?>" class="icon-white">
+        <div class="process-card scroll-animate <?php echo $delay ? 'delay-' . $delay : ''; ?>">
+          <div class="process-number"><span><?php echo $number; ?></span></div>
+          <div class="process-icon">
+            <img src="<?php echo esc_url($card['icone']); ?>" alt="<?php echo esc_attr($card['titulo']); ?>"
+              class="icon-white-on-dark">
+          </div>
+          <h3><?php echo esc_html($card['titulo']); ?></h3>
+          <p><?php echo esc_html($card['descricao']); ?></p>
+          <?php if (!empty($card['itens_card'])) : ?>
+          <ul class="process-details">
+            <?php foreach ($card['itens_card'] as $item) : ?>
+            <li><span class="dot"></span><?php echo esc_html($item['texto']); ?></li>
+            <?php endforeach; ?>
+          </ul>
+          <?php endif; ?>
         </div>
-        <h3><?php echo esc_html($card['titulo']); ?></h3>
-        <p><?php echo esc_html($card['descricao']); ?></p>
-        <?php if (!empty($card['itens_card'])) : ?>
-        <ul class="process-details">
-          <?php foreach ($card['itens_card'] as $item) : ?>
-          <li><span class="dot"></span><?php echo esc_html($item['texto']); ?></li>
-          <?php endforeach; ?>
-        </ul>
-        <?php endif; ?>
-      </div>
-      <?php endforeach; endif; ?>
+        <?php endforeach; endif; ?>
       </div>
 
       <!-- Process Navigation -->

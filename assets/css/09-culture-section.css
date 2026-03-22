@@ -4,7 +4,8 @@
 .culture-section {
 	position: relative;
 	overflow: hidden;
-	background: #2a3650;
+	background: var(--dark-gradient);
+	box-shadow: var(--dark-shadow);
 }
 
 .culture-section .decorative-bg {
@@ -43,33 +44,17 @@
 	}
 }
 .culture-content .section-label {
-	color: #f3f4f6;
+	color: #fff;
 	text-align: left;
 }
 .culture-content .section-title {
-	color: #f3f4f6;
+	color: #fff;
 	text-align: left;
 }
 .culture-content .section-description {
-	color: #f3f4f6;
+	color: #fff;
 	text-align: left;
 	margin: 0 0 2rem;
-}
-.culture-cta {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-	background: #39496a;
-	color: #fff;
-	font-weight: 600;
-	padding: 1rem 2rem;
-	border-radius: 9999px;
-	border: 1px solid #f3f4f6;
-	transition: 0.3s ease;
-}
-.culture-cta:hover {
-	background: #2a3650;
-	box-shadow: 0 20px 40px rgba(57, 73, 106, 0.2);
 }
 .values-grid {
 	display: grid;
@@ -83,11 +68,11 @@
 	}
 }
 .value-card {
-	background: #fff;
+	background: rgba(255, 255, 255, 0.05);
 	border-radius: 0.75rem;
 	padding: 1.5rem;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-	border: 1px solid #f3f4f6;
+	border: 1px solid rgba(255, 255, 255, 0.1);
 	transition:
 		background-color 0.3s ease,
 		color 0.3s ease,
@@ -128,13 +113,13 @@
 	color: #fff;
 }
 .value-card h3 {
-	color: #39496a;
+	color: #fff;
 	font-weight: 700;
 	font-size: 1.125rem;
 	margin-bottom: 0.5rem;
 }
 .value-card p {
-	color: rgba(57, 73, 106, 0.6);
+	color: #fff;
 	font-size: 0.875rem;
 	line-height: 1.75;
 }

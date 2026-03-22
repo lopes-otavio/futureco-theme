@@ -87,7 +87,6 @@ function futureco_scripts() {
         'futureco-forms'           => '/assets/js/modules/forms.js',
         'futureco-faq'             => '/assets/js/modules/faq.js',
         'futureco-general'         => '/assets/js/modules/general.js',
-        'futureco-theme-switcher'  => '/assets/js/modules/theme-switcher.js',
     );
 
     // Owl Carousel Script
@@ -110,11 +109,7 @@ function futureco_scripts() {
         );
     }
 
-    // Localize theme switcher script
-    wp_localize_script('futureco-theme-switcher', 'futurecoThemeData', array(
-        'modoEscuro' => pll__('Modo Escuro'),
-        'modoClaro'  => pll__('Modo Claro'),
-    ));
+
 
     // reCAPTCHA Form Script
     wp_enqueue_script(

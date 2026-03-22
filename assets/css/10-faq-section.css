@@ -4,17 +4,8 @@
 .faq-section {
 	position: relative;
 	overflow: hidden;
-	background: #f3f4f6;
-}
-
-.faq-section .section-label {
-	color: #39496a;
-}
-.faq-section .section-title {
-	color: #39496a;
-}
-.faq-section .section-description {
-	color: #39496a;
+	background: var(--dark-gradient);
+	box-shadow: var(--dark-shadow);
 }
 
 .faq-section .section-header {
@@ -37,7 +28,7 @@
 	position: relative;
 }
 .employee-card {
-	background: #f3f4f6;
+	background: none;
 	border: 1px solid #39496a;
 	border-radius: 2rem;
 	padding: 3rem 2rem;
@@ -68,7 +59,7 @@
 	transform: scale(1.05);
 }
 .employee-text {
-	color: #39496a;
+	color: #fff;
 	font-size: 1.125rem;
 	font-weight: 500;
 	line-height: 1.5;
@@ -80,8 +71,8 @@
 	align-items: center;
 	gap: 1rem;
 	background: transparent;
-	border: 1px solid #39496a;
-	color: #39496a;
+	border: 1px solid #fff;
+	color: #fff;
 	padding: 0.5rem 0.5rem 0.5rem 1.5rem;
 	border-radius: 999px;
 	font-weight: 600;
@@ -93,8 +84,8 @@
 .btn-faq-ask .btn-icon {
 	width: 44px;
 	height: 44px;
-	background: #39496a;
-	color: #fff;
+	background: #fff;
+	color: #39496a;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -119,7 +110,7 @@
 	}
 }
 .faq-item {
-	border-bottom: 1px solid #39496a;
+	border-bottom: 1px solid #fff;
 }
 .faq-item:last-child {
 	border-bottom: none;
@@ -131,7 +122,7 @@
 	align-items: center;
 	justify-content: space-between;
 	text-align: left;
-	color: #39496a;
+	color: #fff;
 	font-weight: 600;
 	font-size: 1.125rem;
 	transition: color 0.3s ease;
@@ -144,7 +135,7 @@
 .faq-question svg {
 	width: 1.25rem;
 	height: 1.25rem;
-	color: #39496a;
+	color: #fff;
 	flex-shrink: 0;
 	transition: transform 0.3s ease;
 }
@@ -161,7 +152,7 @@
 	padding-bottom: 1.5rem;
 }
 .faq-answer p {
-	color: #39496a;
+	color: #fff;
 	line-height: 1.75;
 	padding-right: 3rem;
 }

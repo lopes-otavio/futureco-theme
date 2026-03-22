@@ -5,7 +5,7 @@
 	position: relative;
 	overflow: hidden;
 	padding: 5rem 0;
-	background-image: var(--bg-light);
+	background-image: var(--bg-dark) !important;
 	background-size: cover;
 	background-position: center;
 }

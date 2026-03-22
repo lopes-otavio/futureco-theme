@@ -4,19 +4,20 @@
 .cases-section {
 	position: relative;
 	overflow: hidden;
-	background-color: #edeff2;
+	background: var(--dark-gradient);
+	box-shadow: var(--dark-shadow);
 }
 
 .cases-section .section-title {
-	color: #39496a;
+	color: #fff;
 }
 
 .cases-section .section-label {
-	color: #39496a;
+	color: #fff;
 }
 
 .cases-section .section-description {
-	color: #39496a;
+	color: #fff;
 }
 
 .cases-grid {
@@ -51,8 +52,8 @@
 	transition:
 		transform 0.3s ease,
 		border-color 0.3s ease;
-	background-color: #edeff2;
-	border: solid 1px #39496a;
+	background: rgba(255, 255, 255, 0.05);
+	border: solid 1px rgba(255, 255, 255, 0.1);
 }
 
 .case-card:hover {
@@ -109,19 +110,19 @@
 	font-size: 1.125rem;
 	font-weight: 700;
 	margin-bottom: 0.75rem;
-	color: #39496a;
+	color: #fff;
 }
 
 .case-content p {
 	font-size: 0.875rem;
-	color: #39496a;
+	color: #fff;
 	line-height: 1.6;
 	margin-bottom: 1.5rem;
 	flex: 1;
 }
 
 .case-content a {
-	color: #39496a;
+	color: #fff;
 }
 
 .case-link {

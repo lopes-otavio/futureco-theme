@@ -3,7 +3,8 @@
    ============================================ */
 .blog-section {
 	position: relative;
-	background: #f3f4f6;
+	background: var(--dark-gradient);
+	box-shadow: var(--dark-shadow);
 }
 
 .blog-section .section-title .text-gradient {
@@ -16,7 +17,7 @@
 .blog-section .section-title,
 .blog-section .section-description,
 .blog-section .section-label {
-	color: #39496a;
+	color: #fff;
 }
 
 .blog-grid {
@@ -104,17 +105,17 @@
 	font-weight: 700;
 	margin-bottom: 1rem;
 	line-height: 1.4;
-	color: #39496a;
+	color: #fff;
 }
 
 .post-title a {
-	color: #39496a;
+	color: #fff;
 	transition: color 0.3s ease;
 }
 
 .post-excerpt {
 	font-size: 0.9375rem;
-	color: #39496a;
+	color: #fff;
 	line-height: 1.6;
 	margin-bottom: 1.5rem;
 	flex: 1;
@@ -125,7 +126,7 @@
 	align-items: center;
 	gap: 0.5rem;
 	font-weight: 600;
-	color: #39496a;
+	color: #fff;
 	font-size: 0.875rem;
 	transition: gap 0.3s ease;
 }

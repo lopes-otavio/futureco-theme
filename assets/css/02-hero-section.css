@@ -13,11 +13,13 @@
 	justify-content: center;
 	overflow: hidden;
 	padding-top: 5rem;
+	background: var(--dark-gradient);
+	box-shadow: var(--dark-shadow);
 }
 .hero-bg {
 	position: absolute;
 	inset: 0;
-	background-image: var(--bg-light);
+	background-image: var(--bg-dark) !important;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -25,12 +27,7 @@
 .hero-overlay {
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(
-		to bottom,
-		rgba(57, 73, 106, 0.8),
-		rgba(57, 73, 106, 0.6),
-		rgba(57, 73, 106, 0.9)
-	);
+	background: none;
 }
 .hero-decorative-1 {
 	position: absolute;
@@ -204,6 +201,6 @@
 .home-content-scroll {
 	position: relative;
 	z-index: 10;
-	background-color: #39496a; /* Hardcoded solid background */
+	background: var(--dark-gradient); /* Hardcoded solid background */
 	box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }

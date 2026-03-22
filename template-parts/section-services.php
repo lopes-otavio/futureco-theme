@@ -22,7 +22,7 @@ if (($servicos_group['ativar'] ?? true) !== false) :
       <h2 class="section-title">
         <?= $titulo; ?>
       </h2>
-      <p class="section-description dark">
+      <p class="section-description">
         <?= $descricao; ?>
       </p>
     </div>

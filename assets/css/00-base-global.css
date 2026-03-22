@@ -21,13 +21,30 @@ html {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+:root {
+	--dark-gradient: linear-gradient(
+		120deg,
+		#7e8a9f 0%,
+		#657289 6%,
+		#39496a 20%,
+		#272b2e 50%,
+		#39496a 80%,
+		#657289 94%,
+		#7e8a9f 100%
+	);
+	--dark-shadow:
+		inset 0 1px 2px rgba(255, 255, 255, 0.25),
+		inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
 body {
 	font-family:
 		"Inter",
 		system-ui,
 		-apple-system,
 		sans-serif;
-	background-color: #39496a;
+	background: var(--dark-gradient);
+	box-shadow: var(--dark-shadow);
 	color: #fff;
 	line-height: 1.6;
 	overflow-x: hidden;
@@ -112,11 +129,21 @@ main {
 }
 
 .text-gradient-dark {
-	color: #39496a;
+	background: linear-gradient(to right, #fff, #9aa7b8);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
 }
 
 .text-gradient-light {
-	color: #39496a;
+	background: var(--dark-gradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+.icon-white-on-dark {
+	filter: brightness(0) invert(1);
 }
 
 .icon-white {

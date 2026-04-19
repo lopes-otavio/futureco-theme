@@ -20,27 +20,39 @@
 	color: #fff;
 }
 
+.wrapper-card-cases {
+	padding-inline: 2rem;
+}
+
 .cases-grid {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 2rem;
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	gap: 1.5rem;
+	padding-bottom: 1rem;
+	-webkit-overflow-scrolling: touch;
+	scrollbar-width: none;
+}
+.cases-grid::-webkit-scrollbar {
+	display: none;
 }
 
 @media (min-width: 640px) {
 	.cases-grid {
-		grid-template-columns: repeat(2, 1fr);
+		gap: 2rem;
 	}
 }
 
 @media (min-width: 1024px) {
 	.cases-grid {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
-@media (min-width: 1280px) {
-	.cases-grid {
-		grid-template-columns: repeat(4, 1fr);
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: stretch;
+		min-height: 640px;
+		overflow-x: hidden; /* JavaScript will handle the scrolling on hover */
+		scroll-snap-type: none;
+		padding-bottom: 0;
 	}
 }
 
@@ -49,23 +61,54 @@
 	flex-direction: column;
 	overflow: hidden;
 	height: 100%;
+	flex: 0 0 85vw; /* horizontal card width on mobile */
+	scroll-snap-align: center;
+	border-radius: 16px;
 	transition:
+		flex 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+		min-width 0.8s cubic-bezier(0.25, 1, 0.5, 1),
 		transform 0.3s ease,
-		border-color 0.3s ease;
+		border-color 0.3s ease,
+		background-color 0.6s ease;
 	background: rgba(255, 255, 255, 0.05);
 	border: solid 1px rgba(255, 255, 255, 0.1);
 }
 
-.case-card:hover {
-	transform: translateY(-5px);
+@media (min-width: 640px) {
+	.case-card {
+		flex: 0 0 45vw; /* tablet card size */
+	}
+}
+
+@media (min-width: 1024px) {
+	.case-card {
+		flex: 1;
+		min-width: 400px;
+		flex-basis: auto;
+		scroll-snap-align: none;
+	}
+
+	.case-card:hover,
+	.case-card:focus-within {
+		flex: 2.5;
+		min-width: 640px;
+		background: rgba(255, 255, 255, 0.12);
+	}
+}
+
+@media (max-width: 1023px) {
+	.case-card:hover {
+		transform: translateY(-5px);
+	}
 }
 
 .case-image {
 	position: relative;
 	width: 100%;
-	aspect-ratio: 4 / 3;
+	height: 380px;
+	flex-shrink: 0;
 	overflow: hidden;
-	border-radius: 0.75rem 0.75rem 0 0;
+	border-radius: 16px 16px 0 0;
 }
 
 .case-image img {
@@ -111,14 +154,22 @@
 	font-weight: 700;
 	margin-bottom: 0.75rem;
 	color: #fff;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .case-content p {
 	font-size: 0.875rem;
-	color: #fff;
+	color: rgba(255, 255, 255, 0.85);
 	line-height: 1.6;
 	margin-bottom: 1.5rem;
 	flex: 1;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
 
 .case-content a {

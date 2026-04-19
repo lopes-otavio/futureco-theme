@@ -1,0 +1,259 @@
+/* ============================================
+   SERVICES SECTION (INTERACTIVE)
+   ============================================ */
+.interactive-services {
+	position: relative;
+	overflow: hidden;
+	min-height: 800px;
+	display: flex;
+	align-items: center;
+	color: #fff;
+}
+
+/* Backgrounds */
+.services-bg-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	background: #111; /* Fallback */
+}
+
+.service-bg-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	opacity: 0;
+	transition: opacity 0.6s ease-in-out, transform 0.6s ease-out;
+	transform: scale(1.05);
+}
+
+.service-bg-layer.active {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.bg-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* Add dark gradient overlay to ensure text/UI visibility */
+	background: linear-gradient(to right, rgba(16, 24, 40, 0.95) 0%, rgba(16, 24, 40, 0.8) 40%, rgba(16, 24, 40, 0.4) 100%);
+}
+
+.interactive-services .content-overlay {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+}
+
+.interactive-services .section-label,
+.interactive-services .section-title,
+.interactive-services .section-description {
+	color: #fff;
+}
+
+.interactive-services .section-title {
+	text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Selector Box */
+.services-interactive-container {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 1.5rem;
+	padding: 2rem;
+	margin-top: 3rem;
+	box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+@media (min-width: 992px) {
+	.services-interactive-container {
+		flex-direction: row;
+		padding: 3rem;
+		min-height: 450px;
+	}
+}
+
+.services-selector-nav {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	flex: 1;
+	/* Scrollable if there are many */
+	max-height: 400px;
+	overflow-y: auto;
+	padding-right: 1rem;
+}
+
+/* Custom Scrollbar for Nav */
+.services-selector-nav::-webkit-scrollbar {
+	width: 6px;
+}
+.services-selector-nav::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 4px;
+}
+.services-selector-nav::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 4px;
+}
+
+.service-nav-item {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem 1.5rem;
+	border-radius: 1rem;
+	cursor: pointer;
+	border: 1px solid transparent;
+	transition: all 0.3s ease;
+	position: relative;
+    overflow: hidden;
+}
+
+.service-nav-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent);
+    transition: width 0.3s ease;
+    z-index: 0;
+}
+
+.service-nav-item:hover {
+	background: rgba(255, 255, 255, 0.05);
+	border-color: rgba(255, 255, 255, 0.1);
+}
+
+.service-nav-item.active {
+	background: rgba(255, 255, 255, 0.15);
+	border-color: rgba(255, 255, 255, 0.3);
+	box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.service-nav-item.active::before {
+    width: 100%;
+}
+
+.service-nav-item .service-icon,
+.service-nav-item h3 {
+    position: relative;
+    z-index: 1;
+}
+
+.service-nav-item .service-icon {
+	width: 2.5rem;
+	height: 2.5rem;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.service-nav-item .service-icon img {
+	width: 1.25rem;
+	height: 1.25rem;
+	filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.service-nav-item h3 {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: #fff;
+	margin: 0;
+	opacity: 0.8;
+	transition: opacity 0.3s ease;
+}
+
+.service-nav-item:hover h3,
+.service-nav-item.active h3 {
+	opacity: 1;
+}
+
+.services-content-display {
+	flex: 1.2;
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 1.5rem;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 1rem;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.service-info-panel {
+	display: none;
+	animation: fadeUpIn 0.5s ease forwards;
+}
+
+.service-info-panel.active {
+	display: block;
+}
+
+.service-info-panel .service-desc {
+	font-size: 1.1rem;
+	line-height: 1.8;
+	color: rgba(255, 255, 255, 0.9);
+	margin-bottom: 2rem;
+}
+
+.service-info-panel .service-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.75rem 1.5rem;
+	background: #fff;
+	color: #101828;
+	border-radius: 2rem;
+	font-weight: 600;
+	font-size: 0.95rem;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.service-info-panel .service-btn:hover {
+	background: rgba(255, 255, 255, 0.9);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.service-info-panel .service-btn img {
+	width: 1rem;
+	height: 1rem;
+	transition: transform 0.3s ease;
+}
+
+.service-info-panel .service-btn:hover img {
+	transform: translate(3px, -3px);
+}
+
+@keyframes fadeUpIn {
+	from {
+		opacity: 0;
+		transform: translateY(15px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

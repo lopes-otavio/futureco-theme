@@ -64,4 +64,51 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		});
 	}
+
+	/* ============================================
+     CASES HOVER SLIDER
+     ============================================ */
+	const casesGrid = document.querySelector(".cases-grid");
+
+	if (casesGrid && window.innerWidth >= 1024) {
+		let targetScroll = casesGrid.scrollLeft;
+		let currentScroll = casesGrid.scrollLeft;
+		let isScrolling = false;
+
+		function smoothScroll() {
+			currentScroll += (targetScroll - currentScroll) * 0.08; // Easing fator
+			casesGrid.scrollLeft = currentScroll;
+
+			if (Math.abs(targetScroll - currentScroll) > 1) {
+				requestAnimationFrame(smoothScroll);
+			} else {
+				isScrolling = false;
+			}
+		}
+
+		casesGrid.addEventListener("mousemove", function (e) {
+			const rect = casesGrid.getBoundingClientRect();
+			let x = e.clientX - rect.left;
+
+			// Add a slight deadzone at the edges for better UX
+			const padding = 50;
+			let percentage = 0;
+
+			if (x > padding && x < rect.width - padding) {
+				percentage = (x - padding) / (rect.width - 2 * padding);
+			} else if (x >= rect.width - padding) {
+				percentage = 1;
+			}
+
+			const maxScroll = casesGrid.scrollWidth - casesGrid.clientWidth;
+
+			if (maxScroll > 0) {
+				targetScroll = percentage * maxScroll;
+				if (!isScrolling) {
+					isScrolling = true;
+					requestAnimationFrame(smoothScroll);
+				}
+			}
+		});
+	}
 });

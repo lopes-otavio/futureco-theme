@@ -73,7 +73,7 @@ if (($blog_group['ativar'] ?? true) !== false) :
     </div>
 
     <div class="text-center mt-10">
-      <a href="<?php echo esc_url(home_url('/blog')); ?>" class="btn-primary"><?= pll__('Ver Mais'); ?></a>
+      <a href="<?php echo esc_url(home_url('/blog')); ?>" class="btn-primary dark"><?= pll__('Ver Mais'); ?></a>
     </div>
   </div>
 </section>

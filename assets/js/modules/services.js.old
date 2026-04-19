@@ -1,0 +1,38 @@
+/**
+ * Services Module
+ * Handles the interactive tags-and-assets style component on mouseenter
+ */
+
+(function($) {
+    'use strict';
+
+    $(document).ready(function() {
+        // Elements
+        const $navItems = $('.service-nav-item');
+        const $infoPanels = $('.service-info-panel');
+        const $bgLayers = $('.service-bg-layer');
+
+        if ($navItems.length === 0) return; // Exit if no interactive services block
+
+        $navItems.on('mouseenter', function() {
+            const index = $(this).data('index');
+
+            // Remove active class from all
+            $navItems.removeClass('active');
+            $infoPanels.removeClass('active');
+            $bgLayers.removeClass('active');
+
+            // Add active class to corresponding element
+            $(this).addClass('active');
+
+            // Find elements with matching index
+            $(`.service-info-panel[data-index="${index}"]`).addClass('active');
+            $(`.service-bg-layer[data-index="${index}"]`).addClass('active');
+        });
+        
+        // Optional: on click for mobile devices (fallback for touch where mouseenter might be an issue)
+        $navItems.on('click', function() {
+             $(this).trigger('mouseenter');
+        });
+    });
+})(jQuery);

@@ -13,7 +13,7 @@ $cases = $cases_group['cases'] ?? array();
 if (($cases_group['ativar'] ?? true) !== false) :
 ?>
 <section class="cases-section section-padding" id="cases">
-  <div class="container">
+  <div class="wrapper-card-cases">
     <!-- Section Header -->
     <div class="section-header">
       <p class="section-label"><?php echo esc_html($label_sessao); ?></p>

@@ -92,9 +92,7 @@
 .post-card {
 	border-radius: 1rem;
 	overflow: hidden;
-	transition:
-		transform 0.3s ease,
-		box-shadow 0.3s ease;
+	transition: 0.3s;
 	display: flex;
 	flex-direction: column;
 	background: rgba(0, 0, 0, 0.2);

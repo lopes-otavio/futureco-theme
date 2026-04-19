@@ -13,38 +13,59 @@ $cards = $servicos_group['cards'] ?? array();
 
 if (($servicos_group['ativar'] ?? true) !== false) :
 ?>
-<section class="services-section section-padding" id="servicos">
-  <div class="decorative-gradient"></div>
+<section class="services-hero-section section-padding" id="servicos" style="background-color: #ffffff;">
   <div class="container section-container">
-    <!-- Section Header -->
-    <div class="section-header">
-      <p class="section-label"><?= $label_sessao; ?></p>
-      <h2 class="section-title">
-        <?= $titulo; ?>
-      </h2>
-      <p class="section-description">
-        <?= $descricao; ?>
-      </p>
-    </div>
+    <div class="services-split-layout">
+      
+      <!-- Lado Esquerdo: Box de Seleção -->
+      <div class="clickable-tags-col">
+        <div class="clickable-tags-grid">
+          <h3 class="grid-title"><?= $titulo; ?></h3>
+          
+          <div class="tags-container">
+            <?php if ($cards) : foreach ($cards as $index => $card) : ?>
+            <div class="tag-component <?php echo $index === 0 ? 'active' : ''; ?>" data-index="<?php echo $index; ?>">
+              <div class="tag-checkbox"></div>
+              <div class="tag-icon">
+                 <img src="<?php echo esc_url($card['icon']); ?>" alt="" class="svg-icon">
+              </div>
+              <span class="tag-text"><?php echo esc_html($card['card_title']); ?></span>
+            </div>
+            <?php endforeach; endif; ?>
+          </div>
 
-    <!-- Services Grid -->
-    <div class="services-grid">
-      <?php if ($cards) : foreach ($cards as $index => $card) : 
-          $delay = ($index % 3) * 100;
-      ?>
-      <div class="service-card glass-card scroll-animate <?php echo $delay ? 'delay-' . $delay : ''; ?>">
-        <div class="service-icon">
-          <img src="<?php echo esc_url($card['icon']); ?>" alt="<?php echo esc_attr($card['card_title']); ?>"
-            class="icon-white-on-dark">
+          <div class="tags-cta">
+            <div class="dynamic-desc-wrapper">
+               <?php if ($cards) : foreach ($cards as $index => $card) : ?>
+                  <p class="service-desc <?php echo $index === 0 ? 'active' : ''; ?>" data-index="<?php echo $index; ?>"><?php echo esc_html($card['card_desc']); ?></p>
+               <?php endforeach; endif; ?>
+            </div>
+            <a href="#" class="btn-start">
+              <?= pll__('Começar'); ?>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+            </a>
+          </div>
         </div>
-        <h3><?php echo esc_html($card['card_title']); ?></h3>
-        <p><?php echo esc_html($card['card_desc']); ?></p>
-        <a href="#" class="service-link">
-          <?= pll__('Saiba mais'); ?>
-          <img src="<?php echo futureco_icon('arrow-top-right.svg'); ?>" alt="" class="icon-white-on-dark">
-        </a>
       </div>
-      <?php endforeach; endif; ?>
+
+      <!-- Lado Direito: Media/Background do Serviço -->
+      <div class="service-media-col">
+        <div class="bg-images-container">
+          <?php if ($cards) : foreach ($cards as $index => $card) : 
+              $bg_val = $card['background'] ?? '';
+              if (empty($bg_val)) {
+                  $fallbacks = ['futureco-results.png', 'futureco-strategy.png', 'futureco-team.png', 'futureco-hero-bg.png'];
+                  $bg_fallback = $fallbacks[$index % count($fallbacks)];
+                  $bg_url = futureco_image($bg_fallback);
+              } else {
+                  $bg_url = esc_url($bg_val);
+              }
+          ?>
+          <img src="<?php echo $bg_url; ?>" class="bg-img <?php echo $index === 0 ? 'active' : ''; ?>" alt="<?php echo esc_attr($card['card_title']); ?>" data-index="<?php echo $index; ?>">
+          <?php endforeach; endif; ?>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

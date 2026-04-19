@@ -5,14 +5,13 @@
 	position: relative;
 	overflow: hidden;
 	padding: 5rem 0;
-	background-image: var(--bg-dark) !important;
+	background-image: var(--dark-gradient) !important;
 	background-size: cover;
 	background-position: center;
 }
 .stats-overlay {
 	position: absolute;
 	inset: 0;
-	background: rgba(57, 73, 106, 0.85);
 }
 .stats-grid {
 	display: grid;

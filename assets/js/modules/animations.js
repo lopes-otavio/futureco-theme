@@ -13,13 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
 				entries.forEach(function (entry) {
 					if (entry.isIntersecting) {
 						entry.target.classList.add("visible");
-						observer.unobserve(entry.target);
+					} else {
+						entry.target.classList.remove("visible");
 					}
 				});
 			},
 			{
 				threshold: 0.1,
-				rootMargin: "0px 0px -50px 0px",
+				rootMargin: "-200px 0px -200px 0px",
 			},
 		);
 

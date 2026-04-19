@@ -128,7 +128,7 @@ if (typeof jQuery !== "undefined") {
 				slideTransition: "linear",
 				autoplayTimeout: 4000,
 				autoplaySpeed: 4000,
-				autoplayHoverPause: true,
+				autoplayHoverPause: false,
 				autoWidth: false,
 				responsive: {
 					0: {

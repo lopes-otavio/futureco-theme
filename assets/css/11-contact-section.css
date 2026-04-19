@@ -67,8 +67,8 @@
 .social-link {
 	width: 2.5rem;
 	height: 2.5rem;
-	background: var(--dark-gradient);
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	background: rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.1);
 	border-radius: 0.5rem;
 	display: flex;
 	align-items: center;

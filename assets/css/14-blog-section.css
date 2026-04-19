@@ -3,12 +3,12 @@
    ============================================ */
 .blog-section {
 	position: relative;
-	background: var(--dark-gradient);
+	background: #fff;
 	box-shadow: var(--dark-shadow);
 }
 
 .blog-section .section-title .text-gradient {
-	background: linear-gradient(to right, #fff, #9aa7b8);
+	background: linear-gradient(to right, #39496a, #717d91);
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -17,7 +17,7 @@
 .blog-section .section-title,
 .blog-section .section-description,
 .blog-section .section-label {
-	color: #fff;
+	color: #39496a;
 }
 
 .blog-grid {
@@ -44,8 +44,14 @@
 	border-radius: 1rem;
 	overflow: hidden;
 	height: 100%;
-	transition: transform 0.3s ease;
-	border: 1px solid #39496a;
+	transition: 0.3s;
+	border: 1px solid rgba(57, 73, 106, 0.1);
+	background: #fff;
+	box-shadow: 0 10px 30px rgba(57, 73, 106, 0.05);
+}
+
+.post-card:hover {
+	box-shadow: 0 15px 40px rgba(57, 73, 106, 0.1);
 }
 
 .post-image {
@@ -98,6 +104,7 @@
 	display: flex;
 	flex-direction: column;
 	flex: 1;
+	background: #fff;
 }
 
 .post-title {
@@ -105,17 +112,17 @@
 	font-weight: 700;
 	margin-bottom: 1rem;
 	line-height: 1.4;
-	color: #fff;
+	color: #39496a;
 }
 
 .post-title a {
-	color: #fff;
+	color: #39496a;
 	transition: color 0.3s ease;
 }
 
 .post-excerpt {
 	font-size: 0.9375rem;
-	color: #fff;
+	color: #717d91;
 	line-height: 1.6;
 	margin-bottom: 1.5rem;
 	flex: 1;
@@ -126,7 +133,7 @@
 	align-items: center;
 	gap: 0.5rem;
 	font-weight: 600;
-	color: #fff;
+	color: #39496a;
 	font-size: 0.875rem;
 	transition: gap 0.3s ease;
 }

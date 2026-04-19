@@ -21,7 +21,7 @@
 	z-index: 10;
 	transform: translateY(0);
 	opacity: 1;
-	background: var(--dark-gradient);
+	background: rgba(0, 0, 0, 0.2);
 	box-shadow: var(--dark-shadow);
 }
 

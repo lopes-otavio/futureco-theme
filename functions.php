@@ -86,6 +86,7 @@ function futureco_scripts() {
         'futureco-slider'          => '/assets/js/modules/slider.js',
         'futureco-forms'           => '/assets/js/modules/forms.js',
         'futureco-faq'             => '/assets/js/modules/faq.js',
+        'futureco-services'        => '/assets/js/modules/services.js',
         'futureco-general'         => '/assets/js/modules/general.js',
     );
 
